@@ -7,7 +7,19 @@
     <code>测试成功</code>
 
     <h4>每整点弹出喝水提醒，每半点弹出查看信息提醒</h4>
+    <code>我猜是行的</code>
 
+    <!--<a href="myprotocol://D:\cmt-static\myprotocol.reg">-->
+      <!--执行可执行文件-->
+    <!--</a>-->
+    <!--<a href="myprotocol://C:\Users\asus\Desktop\xx.reg">-->
+      <!--执行可执行文件-->
+    <!--</a>-->
+    <div>
+      <a href="ajiprotocoltim://C:\Users\asus\Desktop\xxxx.reg">
+        tim
+      </a>
+    </div>
   </div>
 </template>
 
@@ -32,14 +44,15 @@
           title = 'drink water'
           body = 'drink some water'
         }
-        // 弹窗
+        // 底窗
         this.tip = new window.Notification(title, {
           body: body,
           icon: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1514213572260&di=61d5ad8f615ea7e444a92f700408a0ac&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D08430ecfdf39b60059c307f481395f5f%2F3bf33a87e950352adbd128245943fbf2b2118b6d.jpg',
           tag: 1
         })
+        // 弹窗
+        window.alert(title + body)
       },
-
       //
       setTip () {
         if (this.timer) {
@@ -58,6 +71,7 @@
           }
         }, 1000)
       },
+      //
       testNotification () {
         window.setTimeout(() => {
           this.tip = new window.Notification('圣诞快乐 title', {
