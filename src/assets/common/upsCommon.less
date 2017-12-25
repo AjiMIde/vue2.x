@@ -1,0 +1,81 @@
+/**
+ * 针对 手机回收2.0 vue 版本中常出现的通用样式所编写
+ */
+.fz13 {
+  font-size: 13px;
+}
+.fz16 {
+  font-size: 16px;
+}
+@clGreen: green;
+
+// 一段分行
+.ups-divide {
+  height: .08rem;
+  background-color: #ddd;
+}
+
+.ups-big-button {
+  .fz16;
+  color: #fff;
+  border: none;
+  display: block;
+  height: .39rem;
+  line-height: .39rem;
+  border-radius: .19rem;
+  background-color: #01a781;
+  margin: 0 .34rem .13rem .34rem;
+  text-align: center;
+  width: 3rem;
+  &:disabled {
+    .ups-big-button-inactive;
+  }
+}
+
+.ups-big-button-reverse {
+  .fz16;
+  .ups-big-button;
+  border: 1px solid currentColor;
+  color: #01a781;
+  background-color: transparent;
+  transition: all 0.2s;
+}
+
+.ups-big-button-inactive {
+  background-color: #99dccd;
+}
+
+.ups-big-button-reverse:active {
+  .ups-big-button;
+}
+
+.ups-button-a {
+  .fz13;
+  height: .39rem;
+  border-radius: .19rem;
+  background-color: #fff;
+  color: @clGreen;
+  border: 1px solid @clGreen;
+  padding: 0 .3rem;
+  &:disabled {
+    border: 1px solid #aaa;
+    color: #aaa;
+  }
+}
+
+.ups-button-b {
+  .fz13;
+  height: .39rem;
+  border-radius: .19rem;
+  background-color: @clGreen;
+  color: #fff;
+  border: 1px solid @clGreen;
+  padding: 0 .3rem;
+  &:disabled {
+    border: 1px solid #aaa;
+    color: #aaa;
+  }
+}
+
+
+

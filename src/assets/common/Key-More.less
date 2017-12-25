@@ -1,0 +1,173 @@
+@font_family: "Helvetica Neue","Helvetica","Arial", "Hiragino Sans GB","Hiragino Sans GB W3", "Microsoft YaHei UI","Microsoft YaHei","WenQuanYi Micro Hei", "sans-serif", "\5FAE\8F6F\96C5\9ED1","\9ED1\4F53,\5b8b\4f53";
+/*公共颜色*/
+@clGreen: #01a781;
+@comOrange: #01a781;
+@comGreen: #36BE07;
+@comGrey: #ebedf0;
+@comDeepGrey: #8a8a8a;
+
+.fzFun(@num) {
+  font-size: @num;
+  @media screen and (min-width: 0px) and (max-width: 359px) {
+    font-size: @num - 1;
+  }
+  @media screen and (min-width: 360px) and (max-width: 413px) {
+    font-size: @num;
+  }
+  @media screen and (min-width: 414px) {
+    font-size: @num + 1;
+  }
+}
+
+.fz10(@align:left) {
+  font-size: 12px;
+  transform-origin: @align;
+  display: inline-block;
+  @media screen and (min-width: 0px) and (max-width: 359px) {
+    transform: scale(.80);
+    width: 125%;
+  }
+  @media screen and (min-width: 360px) and (max-width: 413px) {
+    transform: scale(.85);
+    width: 117%;
+  }
+  @media screen and (min-width: 414px) {
+    transform: scale(.9);
+    width: 111%;
+  }
+}
+
+.fz11(@align:left) {
+  font-size: 12px;
+  transform-origin: @align;
+  display: inline-block;
+  @media screen and (min-width: 0px) and (max-width: 359px) {
+    transform: scale(.85);
+    width: 117%;
+  }
+  @media screen and (min-width: 360px) and (max-width: 413px) {
+    transform: scale(.90);
+    width: 111%;
+  }
+  @media screen and (min-width: 414px) {
+    transform: scale(.95);
+    width: 105%;
+  }
+}
+
+.fz12 {
+  .fzFun(12px)
+}
+
+.fz13 {
+  .fzFun(13px)
+}
+
+.fz14 {
+  .fzFun(14px)
+}
+
+.fz15 {
+  .fzFun(15px)
+}
+
+.fz16 {
+  .fzFun(16px)
+}
+
+.fz17 {
+  .fzFun(17px)
+}
+
+.fz18 {
+  .fzFun(18px)
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  font-size: 100px;
+}
+
+body {
+  color: #333;
+  font-size: 12px;
+  background: #fff;
+  font-family: @font_family;
+}
+
+/*遮窗*/
+.mask-win {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  position: fixed;
+  background-color: rgba(0, 0, 0, .5);
+  color: #333;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .mask-win-container {
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .5);
+    background-color: #fff;
+    //border: 1px solid #999;
+    border-radius: 1px;
+    outline: 0;
+    margin-top: -50px;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 150px;
+    max-width: 250px;
+  }
+}
+
+/*底border*/
+.bd-bottom {
+  border-bottom: 1px solid darken(@comGrey, 10%);
+}
+
+/*顶border*/
+.bd-top {
+  border-top: 1px solid darken(@comGrey, 10%);
+}
+
+/*保持一行文字*/
+.one-row {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/*icon*/
+.icon {
+  display: inline-block;
+  background-size: 100%;
+  vertical-align: text-bottom;
+  background-repeat: no-repeat;
+  //background-image: url(../img/f.png);
+}
+
+/*清除浮动*/
+.clearFix {
+  &:after {
+    content: ' ';
+    display: block;
+    clear: both;
+  }
+}
+
+
+
+
