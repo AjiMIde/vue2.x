@@ -3,8 +3,8 @@
  *
  * aryToString     将 array 排成一个字符串如： '1,2,3....'
  */
-module.exports = {
-// export default {
+// module.exports = {
+export default {
   /**
    * 将 array 排成一个字符串如： '1,2,3....'
    * @param ary  Y array 欲排序的数组

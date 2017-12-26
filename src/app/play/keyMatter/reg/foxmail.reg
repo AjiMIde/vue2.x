@@ -1,0 +1,17 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\ajiprotocalfoxmail]
+@="ajiprotocalfoxmail Protocol"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\ajiprotocalfoxmail\DefaultIcon]
+@="D:\\Program Files\\Foxmail 7.2\\Foxmail.exe"
+
+[HKEY_CLASSES_ROOT\ajiprotocalfoxmail\shell]
+@=""
+
+[HKEY_CLASSES_ROOT\ajiprotocalfoxmail\shell\open]
+@=""
+
+[HKEY_CLASSES_ROOT\ajiprotocalfoxmail\shell\open\command]
+@="\"D:\\Program Files\\Foxmail 7.2\\Foxmail.exe\" "
