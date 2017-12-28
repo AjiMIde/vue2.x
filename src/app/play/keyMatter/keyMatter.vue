@@ -59,7 +59,7 @@
         // 运行程序
         launchExe: {
           timer: '',
-          seconds: 55,     // 多少秒后启动应用程序
+          seconds: 0,     // 多少秒后启动应用程序
           minutes: 0
         },
         launchExeInfo: []
@@ -138,6 +138,7 @@
           } else if (m === 0) {
             if (s === 0) {
               this.setNotify('起来', '喝水', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1514267498934&di=73c9d37418472085ac3b9ef09e4d85e9&imgtype=0&src=http%3A%2F%2Fa3.topitme.com%2F3%2F2c%2Fb1%2F117160463412cb12c3o.jpg')
+              this.iKnown = false
             }
             if (s === 10 && this.iKnown === false) {
               this.setAlert('起来' + '喝水')
@@ -167,7 +168,7 @@
           window.clearInterval(this.launchExe.timer)
         }
 
-        let minM = 1      // 最小时间，在此时间后开始启动应用程序
+        let minM = 5      // 最小时间，在此时间后开始启动应用程序
         this.launchExe.timer = window.setInterval(() => {
           // 计算时间
           let s = this.launchExe.seconds++
