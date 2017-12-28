@@ -95,7 +95,7 @@
       this.navList.push({name: 'PPT', url: 'ppt', title: '部门培训', desc: 'Vue', color: '#654ff0'})
       this.navList.push({name: '测试', url: 'test', title: '测试', desc: '自动化测试、Key事项', color: '#cf4646'})
       this.navList.push({name: 'Play', url: 'play', title: '玩物', desc: 'key事项提醒KeyMatter', color: '#4caf50'})
-      // #4ad5ff   #
+      this.navList.push({name: 'HTML5', url: 'html5', title: 'HTML5', desc: '很多？H5 新特性', color: '#4ad5ff'})
     }
   }
 

@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
-import testVux from '@/app/test/vux.vue'
 import testHttp from '@/app/test/http.vue'
 
 import ppt from './ppt.js'
 import play from './play.js'
+import html5 from './html5.js'
 
 Vue.use(Router)
 
@@ -24,14 +24,6 @@ let defaults = [
     name: 'index',
     component: r => require.ensure([], () => r(require('@/app/index/index.vue')), '')
   }, {
-    path: '/test',
-    name: 'test',
-    component: r => require.ensure([], () => r(require('@/app/test/test.vue')), '')
-  }, {
-    path: '/test/vux',
-    name: 'testVux',
-    component: testVux
-  }, {
     path: '/test/http',
     name: 'testHttp',
     component: testHttp
@@ -49,6 +41,6 @@ let defaults = [
   }]
 
 export default new Router({
-  routes: project.concat(defaults).concat(ppt).concat(play)
+  routes: project.concat(defaults).concat(ppt).concat(play).concat(html5)
   // base: '/app/'
 })

@@ -1,6 +1,7 @@
 <template>
   <div class="test">
     <div class="src-list">
+
       <ul>
         <li v-for="item in list">
           <router-link :to="'/ppt/' + item.url + '/'">
@@ -11,6 +12,7 @@
           </span>
         </li>
       </ul>
+
     </div>
   </div>
 </template>
@@ -22,7 +24,7 @@
     data () {
       return {
         list: [
-          {title: 'Key事项提示', url: 'key-matter-tip', date: '2017-12-20'},
+          {title: 'Chrome Notification', url: 'key-matter-tip', date: '2017-12-20'},
           {title: 'Vue 总结', url: 'vue-summary'},
           {title: 'Vue 总结', url: 'vue-summary'}
         ]

@@ -1,41 +1,33 @@
 <template>
   <div class="key-matter vux2x-document">
     <div class="para">
-      <h2>测试 window.Notification</h2>
-      <div class="title">测试 chrome  h5 桌面提醒</div>
-      <code> {{ifChromeNotify ? '当前支持 notification' : '当前不支持 notification'}}</code>
-
-      <div class="title">点击弹出 notification window </div>
-      <button @click="setNotify()">点击测试</button>
-
       <h2>整点提醒喝水，半点提醒信息查看</h2>
       <div>
-        <code>离整点还有 {{(60 - matterTip.minutes) + ' 分'}}</code>
+        <code>{{matterTip.hours + ':' + matterTip.minutes + ':' + matterTip.seconds}}</code>
       </div>
       <div>
-        <code>离半点还有 {{((90 - matterTip.minutes) % 60) + ' 分'}}</code>
+        <code>离整点还有 {{(60 - matterTip.minutes - 1) + ' 分 '}}</code>
+      </div>
+      <div>
+        <code>离半点还有 {{((90 - matterTip.minutes - 1) % 60) + ' 分'}}</code>
       </div>
 
       <h2>开机分段启动应用程序</h2>
       <ul>
-        <li>注册表执行注册协议，并关联应用程序</li>
-        <li><code>打开 src/app/play/keyMatter/reg/ </code></li>
-        <li>执行注册</li>
-        <li><code>当前已注册：tim/wechat/foxmail</code></li>
-        <li>通过 a 标签关联协议，通过点击 a 标签，打开协议，打开应用程序</li>
-        <li>测试 <a id='protocolTim' href="ajiprotocoltim://"> Tim </a></li>
-        <li>测试 <a id='protocolWechat' href="ajiprotocalwechat://"> Wechat </a></li>
-        <li>测试 <a id='protocolFoxmail' href="ajiprotocalFoxmail://"> Foxmail </a></li>
+        <li>测试 <a id='protocoltim' href="ajiprotocoltim://"> Tim </a></li>
+        <li>测试 <a id='protocolwechat' href="ajiprotocalwechat://"> Wechat </a></li>
+        <li>测试 <a id='protocolfoxmail' href="ajiprotocalFoxmail://"> Foxmail </a></li>
+        <li>测试 <a id='protocol360' href="ajiprotocal360://"> 360 </a></li>
         <li>通过定时程序，并使用 click 事件自动响应 a 标签，打开应用程序</li>
       </ul>
 
-      <ul v-if="launchExe.allLaunched">
-        <li>所有程序已启动</li>
-      </ul>
-      <ul v-else>
-        <li>{{(launchExe.timeTim - launchExe.minutes) > 0 ? (launchExe.timeTim - launchExe.minutes) + ' 分后启动 Tim' : '已启动 Tim '}}</li>
-        <li>{{(launchExe.timeWechat - launchExe.minutes) > 0 ? (launchExe.timeWechat - launchExe.minutes) + ' 分后启动 Wechat' : '已启动 Wechat '}}</li>
-        <li>{{(launchExe.timeFoxmail - launchExe.minutes) > 0 ? (launchExe.timeFoxmail - launchExe.minutes) + ' 分后启动 Foxmail' : '已启动 Foxmail '}}</li>
+      <ul>
+        <li v-for="item in launchExeInfo">
+          <span v-show="item.status === 'launched'">{{item.type}} 已启动</span>
+          <span v-show="item.status === 'cancel'">{{item.type}} 已取消</span>
+          <span v-show="item.status === 'launching'">正在启动 {{item.type}} </span>
+          <span v-show="item.status === 'noLaunch'">{{item.type}} 等待启动中...</span>
+        </li>
       </ul>
 
       <h2>开机启动以上服务</h2>
@@ -58,6 +50,7 @@
         // 事项提醒
         matterTip: {
           notification: '',
+          hours: 0,       // 这三个代表时间而已
           minutes: 0,
           seconds: 0,
           timer: 0,
@@ -65,18 +58,29 @@
         },
         // 运行程序
         launchExe: {
-          allLaunched: false,
           timer: '',
-          seconds: 0,
-          minutes: 0,
-          timeTim: 5,
-          timeWechat: 6,
-          timeFoxmail: 7,
-          timeEnd: 8
-        }
+          seconds: 55,     // 多少秒后启动应用程序
+          minutes: 0
+        },
+        launchExeInfo: []
       }
     },
     methods: {
+      getStyle () {
+        // 生产上，有些问题，靠这种，破方法解决
+        if (window.location.port === '8888') {
+          let style = document.getElementsByTagName('link')[0]
+          let styleLink = style.attributes.href.value
+          let link = window.location.protocol + '//' + window.location.host + styleLink.slice(1, styleLink.length)
+
+          this.$http.get(link).then(function (res) {
+            let style = document.createElement('style')
+            style.innerText = res.data
+            let h = document.getElementsByTagName('head')[0]
+            h.appendChild(style)
+          })
+        }
+      },
       /**
        * chrome notification 弹窗
        * @param title
@@ -103,8 +107,9 @@
 
       // 当 notification 被点击时，触发 iKnown = true
       setNotifyOnClick () {
-        this.matterTip.notification.onclick = () => {
-          console.log('xxx')
+        let n = this.matterTip.notification
+        n.onclick = () => {
+          console.log('notification be clicked, iKnown is true')
           this.matterTip.notification.close()
           this.matterTip.iKnown = true
         }
@@ -117,6 +122,7 @@
         }
         this.matterTip.timer = window.setInterval(() => {
           let date = new Date()
+          this.matterTip.hours = date.getHours()
           let m = this.matterTip.minutes = date.getMinutes()
           let s = this.matterTip.seconds = date.getSeconds()
 
@@ -144,42 +150,64 @@
       // 倒数启动应用程序
       inverseAndOpenExe () {
         let date = 'keyMatter' + FzDate.get('yyyy-MM-dd')
+        this.launchExeInfo = FzsLocalStorage.get(date)
 
-        if (FzsLocalStorage.get(date) === '') { // 今天还没有启动过
-          if (this.launchExe.timer) {
-            window.clearInterval(this.launchExe.timer)
-          }
-          this.launchExe.timer = window.setInterval(() => {
-            this.launchExe.seconds++
-            this.launchExe.minutes = parseInt(this.launchExe.seconds / 60)
-            // 到点终止
-            if (this.launchExe.seconds / 60 === this.launchExe.timeEnd) {
-              window.clearInterval(this.launchExe.timer)
-              FzsLocalStorage.set(date, 'true')
-              this.launchExe.allLaunched = true
-            }
-            // 打开 Tim
-            if (this.launchExe.seconds / 60 === this.launchExe.timeTim) {
-              let a = document.getElementById('protocolTim')
-              a.click()
-              console.log('--' + 'launching tim')
-            }
-            // 打开 wechat
-            if (this.launchExe.seconds / 60 === this.launchExe.timeWechat) {
-              let a = document.getElementById('protocolWechat')
-              a.click()
-              console.log('--' + 'launching wechat')
-            }
-            // 打开 foxmail
-            if (this.launchExe.seconds / 60 === this.launchExe.timeFoxmail) {
-              let a = document.getElementById('protocolFoxmail')
-              a.click()
-              console.log('--' + 'launching foxmail')
-            }
-          }, 1000)
-        } else {
-          this.launchExe.allLaunched = true
+        if (this.launchExeInfo.length === 0) {   // 如果今天还没有运行过
+          this.launchExeInfo = []
+
+          this.launchExeInfo.push({type: 'tim', status: 'noLaunch'}) // noLaunch/launched/launching/cancel
+          this.launchExeInfo.push({type: 'wechat', status: 'noLaunch'})
+          this.launchExeInfo.push({type: 'foxmail', status: 'noLaunch'})
+          this.launchExeInfo.push({type: '360', status: 'cancel'})
+
+          FzsLocalStorage.set(date, this.launchExeInfo)
         }
+        //开始 timer
+        if (this.launchExe.timer) {
+          window.clearInterval(this.launchExe.timer)
+        }
+
+        let minM = 1      // 最小时间，在此时间后开始启动应用程序
+        this.launchExe.timer = window.setInterval(() => {
+          // 计算时间
+          let s = this.launchExe.seconds++
+          let m = this.launchExe.minutes = parseInt(s / 60)
+
+          if (m === minM) {
+            console.log('doing...')
+            minM++
+            for (let i = 0; i < this.launchExeInfo.length; i++) {
+              let exe = this.launchExeInfo[i]
+              if (exe.status === 'noLaunch') {
+                console.log('....', exe)
+                exe.status = 'launching'
+                this.$set(this.launchExeInfo, i, exe)
+
+                window.setTimeout(() => {
+                  exe.status = 'launched'
+                  document.getElementById('protocol' + exe.type).click()
+                  console.log('--' + ' launching ' + exe.type)
+                  this.$set(this.launchExeInfo, i, exe)
+                  FzsLocalStorage.set(date, this.launchExeInfo)
+                }, 3000)
+
+                if ((i + 1) === this.launchExeInfo.length) {
+                  console.log('clear int')
+                  window.clearInterval(this.launchExe.timer)
+                } else {
+                  break
+                }
+              }
+
+              console.log(i, this.launchExeInfo.length)
+
+              if ((i + 1) === this.launchExeInfo.length) {
+                console.log('clear int')
+                window.clearInterval(this.launchExe.timer)
+              }
+            }
+          }
+        }, 1000)
       }
     },
     filters: {
@@ -194,6 +222,7 @@
       this.setNotify('你好', '开始工作了')
       this.startWholePointTip()
       this.inverseAndOpenExe()
+      this.getStyle()
     }
   }
 </script>

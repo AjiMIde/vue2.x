@@ -17,6 +17,15 @@ module.exports = {
   ],
   // add your custom rules here
   'rules': {
+    // aji -17-06-19 -s
+    'spaced-comment': 0,
+    'comma-dangle': 0,
+    'no-eval': 0,
+    'no-trailing-spaces': ['error', { "skipBlankLines": true }],
+    'no-multiple-empty-lines': 0,
+    'padded-blocks': 0,
+    // aji -17-06-19 -e
+
     // allow paren-less arrow functions
     'arrow-parens': 0,
     // allow async-await

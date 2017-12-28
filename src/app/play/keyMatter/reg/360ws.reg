@@ -1,0 +1,17 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\ajiprotocal360]
+@="ajiprotocal360 Protocol"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\ajiprotocal360\DefaultIcon]
+@="D:\\Program\360\\360ws\\360Safe\\safemon\\360tray.exe"
+
+[HKEY_CLASSES_ROOT\ajiprotocal360\shell]
+@=""
+
+[HKEY_CLASSES_ROOT\ajiprotocal360\shell\open]
+@=""
+
+[HKEY_CLASSES_ROOT\ajiprotocal360\shell\open\command]
+@="\"D:\\Program\360\\360ws\\360Safe\\safemon\\360tray.exe\" "
