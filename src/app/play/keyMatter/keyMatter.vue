@@ -14,11 +14,15 @@
 
       <h2>开机分段启动应用程序</h2>
       <ul>
-        <li>测试 <a id='protocoltim' href="ajiprotocoltim://"> Tim </a></li>
-        <li>测试 <a id='protocolwechat' href="ajiprotocalwechat://"> Wechat </a></li>
-        <li>测试 <a id='protocolfoxmail' href="ajiprotocalFoxmail://"> Foxmail </a></li>
-        <li>测试 <a id='protocol360' href="ajiprotocal360://"> 360 </a></li>
-        <li>测试 <a id='protocolworktile' href="http://my.worktile.com/dashboard" target="_blank"> Worktile </a></li>
+        <li>测试
+          <a id='protocoltim' href="ajiprotocoltim://"> Tim </a>
+          <a id='protocolwechat' href="ajiprotocalwechat://"> Wechat </a>
+          <a id='protocolfoxmail' href="ajiprotocalFoxmail://"> Foxmail </a>
+          <a id='protocol360' href="ajiprotocal360://"> 360 </a>
+          <a id='protocolworktile' href="http://my.worktile.com/dashboard" target="_blank"> Worktile </a>
+          <a id='protocolwox' href="ajiprotocalwox://"> wox </a>
+        </li>
+
         <li>通过定时程序，并使用 click 事件自动响应 a 标签，打开应用程序</li>
       </ul>
 
@@ -122,31 +126,33 @@
         }
         this.matterTip.timer = window.setInterval(() => {
           let date = new Date()
-          this.matterTip.hours = date.getHours()
+          let h = this.matterTip.hours = date.getHours()
           let m = this.matterTip.minutes = date.getMinutes()
           let s = this.matterTip.seconds = date.getSeconds()
+
+          if (s === 0) { // 这里做一个日记，因为发布 setInterval 休眠了
+            this.log('Time: ' + h + ':' + m)
+          }
 
           if (m === 30) {
             if (s === 0) {
               this.matterTip.iKnown = false
               this.setNotify('起来', '走走', 'https://gss3.bdstatic.com/84oSdTum2Q5BphGlnYG/timg?wapp&quality=80&size=b150_150&subsize=20480&cut_x=0&cut_w=0&cut_y=0&cut_h=0&sec=1369815402&srctrace&di=26cecb5ef06f0df52538150bf837f0d5&wh_rate=null&src=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fpic%2Fitem%2Fcc11728b4710b91286e2ba48c2fdfc0392452260.jpg')
-              this.log('Notify: m-' + m + ' s-' + s)
+              this.log('Notify: ' + h + ':' + m + ':' + s)
             }
             if (s === 10 && this.matterTip.iKnown === false) {
-              this.matterTip.iKnown = true
               this.setAlert('起来' + '走走')
-              this.log('Notify: m-' + m + ' s-' + s)
+              this.log('Notify: ' + h + ':' + m + ':' + s)
             }
           } else if (m === 0) {
             if (s === 0) {
               this.matterTip.iKnown = false
               this.setNotify('起来', '喝水', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1514267498934&di=73c9d37418472085ac3b9ef09e4d85e9&imgtype=0&src=http%3A%2F%2Fa3.topitme.com%2F3%2F2c%2Fb1%2F117160463412cb12c3o.jpg')
-              this.log('Notify: m-' + m + ' s-' + s)
+              this.log('Notify: ' + h + ':' + m + ':' + s)
             }
             if (s === 10 && this.matterTip.iKnown === false) {
-              this.matterTip.iKnown = true
               this.setAlert('起来' + '喝水')
-              this.log('Notify: m-' + m + ' s-' + s)
+              this.log('Notify: ' + h + ':' + m + ':' + s)
             }
           }
         }, 1000)
@@ -164,6 +170,7 @@
           this.launchExeInfo.push({type: 'tim', status: 'noLaunch'}) // noLaunch/launched/launching/cancel
           this.launchExeInfo.push({type: 'wechat', status: 'noLaunch'})
           this.launchExeInfo.push({type: 'foxmail', status: 'noLaunch'})
+          this.launchExeInfo.push({type: 'wox', status: 'noLaunch'})
           this.launchExeInfo.push({type: '360', status: 'cancel'})
 
           FzsLocalStorage.set(date, this.launchExeInfo)
