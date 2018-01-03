@@ -6,14 +6,9 @@ import testHttp from '@/app/test/http.vue'
 import ppt from './ppt.js'
 import play from './play.js'
 import html5 from './html5.js'
+import project from './projectSummary.js'
 
 Vue.use(Router)
-
-let project = [{
-  path: '/project-summary',
-  name: 'project-summary',
-  component: r => require.ensure([], () => r(require('@/app/projectSummary/projectSummary.vue')), '')
-}]
 
 let defaults = [
   {

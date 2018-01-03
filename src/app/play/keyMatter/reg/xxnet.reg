@@ -1,0 +1,17 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\ajiprotocalxxnet]
+@="ajiprotocalxxnet Protocol"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\ajiprotocalxxnet\DefaultIcon]
+@="D:\\Dev\\XX-Net-master\\start.vbs"
+
+[HKEY_CLASSES_ROOT\ajiprotocalxxnet\shell]
+@=""
+
+[HKEY_CLASSES_ROOT\ajiprotocalxxnet\shell\open]
+@=""
+
+[HKEY_CLASSES_ROOT\ajiprotocalxxnet\shell\open\command]
+@="\"D:\\Dev\\XX-Net-master\\start.vbs\" "
