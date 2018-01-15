@@ -16,6 +16,38 @@
     methods: {
       back () {
         this.$router.back()
+      },
+      setH4Click () {
+        let dh = document.getElementsByTagName('h4')
+        let setClickEvent = function (item) {
+          item.onclick = function () {
+            var dis = item.nextElementSibling.style.display
+            if (dis === 'none') {
+              item.nextElementSibling.style.display = 'block'
+              item.classList.remove('para-plus')
+              item.classList.add('para-minus')
+              // console.log(window.aji = item.nextElementSibling)
+            } else {
+              item.nextElementSibling.style.display = 'none'
+              item.classList.add('para-plus')
+              item.classList.remove('para-minus')
+            }
+          }
+          let iWantItNow = false
+          if (iWantItNow) {
+            item.nextElementSibling.style.display = 'none'
+            item.classList.add('para-plus')
+            item.classList.remove('para-minus')
+          } else {
+            item.nextElementSibling.style.display = 'block'
+            item.classList.add('para-minus')
+            item.classList.remove('para-plus')
+          }
+        }
+
+        for (let i = 0; i < dh.length; i++) {
+          setClickEvent(dh[i])
+        }
       }
     },
     watch: {
@@ -27,6 +59,7 @@
               window.hljs.highlightBlock(pre)
             }
           }
+          this.a.methods.setH4Click()
         }, 500)
       }
     }

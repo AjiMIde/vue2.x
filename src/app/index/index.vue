@@ -12,7 +12,7 @@
     </div>
 
     <div class="nav">
-      <router-link v-for="item in navList" :to="'' + item.url + '/'" target="_blank">
+      <router-link v-for="item in navList" :to="'' + item.url + '/'" target="_self">
         <div class="nav-name" :style="'background-color:' + item.color">{{item.name}}</div>
         <div class="nav-title">{{item.title}}</div>
         <div class="nav-desc">{{item.desc}}</div>

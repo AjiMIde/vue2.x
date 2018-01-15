@@ -1,9 +1,5 @@
-export default [
+let vueSummary = [
   {
-    path: '/ppt',
-    name: 'ppt',
-    component: r => require.ensure([], () => r(require('@/app/ppt/ppt.vue')), '')
-  }, {
     path: '/ppt/vue-summary',
     name: 'pptVueSummary',
     component: r => require.ensure([], () => r(require('@/app/ppt/vueSummary/_index.vue')), '')
@@ -34,8 +30,45 @@ export default [
   }, {
     path: '/ppt/vue-summary/example',
     component: r => require.ensure([], () => r(require('@/app/ppt/vueSummary/_example.vue')), '')
-  }, {
-    path: '/ppt/template',
-    component: r => require.ensure([], () => r(require('@/app/ppt/_template.vue')), '')
   }
 ]
+
+let testSpec = [{
+  path: '/ppt/test-spec',
+  component: r => require.ensure([], () => r(require('@/app/ppt/testSpec/testSpec.vue')), '')
+}, {
+  path: '/ppt/test-spec/basic-concept',
+  component: r => require.ensure([], () => r(require('@/app/ppt/testSpec/basicConcept.vue')), '')
+}, {
+  path: '/ppt/test-spec/jasmine',
+  component: r => require.ensure([], () => r(require('@/app/ppt/testSpec/jasmine.vue')), '')
+}, {
+  path: '/ppt/test-spec/mocha',
+  component: r => require.ensure([], () => r(require('@/app/ppt/testSpec/mocha.vue')), '')
+}, {
+  path: '/ppt/test-spec/karma',
+  component: r => require.ensure([], () => r(require('@/app/ppt/testSpec/karma.vue')), '')
+}, {
+  path: '/ppt/test-spec/karma-vue',
+  component: r => require.ensure([], () => r(require('@/app/ppt/testSpec/karmaVue.vue')), '')
+}, {
+  path: '/ppt/test-spec/notice-point',
+  component: r => require.ensure([], () => r(require('@/app/ppt/testSpec/noticePoint.vue')), '')
+}, {
+  path: '/ppt/test-spec/unit-test-demo',
+  component: r => require.ensure([], () => r(require('@/app/ppt/testSpec/unitTestDemo.vue')), '')
+}, {
+  path: '/ppt/test-spec/summary',
+  component: r => require.ensure([], () => r(require('@/app/ppt/testSpec/summary.vue')), '')
+}]
+
+let index = [{
+  path: '/ppt',
+  name: 'ppt',
+  component: r => require.ensure([], () => r(require('@/app/ppt/ppt.vue')), '')
+}, {
+  path: '/ppt/template',
+  component: r => require.ensure([], () => r(require('@/app/ppt/_template.vue')), '')
+}]
+
+export default index.concat(vueSummary).concat(testSpec)

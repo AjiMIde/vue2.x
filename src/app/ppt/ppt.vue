@@ -22,7 +22,7 @@ export default {
     return {
       list: [
         {title: 'Vue 总结', url: 'vue-summary', date: '2017-12-01'},
-        {title: 'Vue 总结', url: 'vue-summary'},
+        {title: 'Web/JavaScript测试', url: 'test-spec', date: '2017-12-30'},
         {title: 'Vue 总结', url: 'vue-summary'}
       ]
     }

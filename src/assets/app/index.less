@@ -40,6 +40,26 @@ Vue2.x index
     padding: 0 0 0 18px;
     margin: 8px auto;
   }
+  .para-plus {
+    &:before{
+      content: '+';
+      display: inline-block;
+      font-size: 14px;
+      padding: 0px 8px;
+      margin-left: -6px;
+      color: #1d95ff;
+    }
+  }
+  .para-minus {
+    &:before{
+      content: '-';
+      display: inline-block;
+      font-size: 14px;
+      padding: 0px 8px;
+      margin-left: -6px;
+      color: #1d95ff;
+    }
+  }
   .para > ul > li {
     line-height: 2.2;
     display: block;
