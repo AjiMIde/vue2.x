@@ -1,0 +1,78 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta id="viewport" name="viewport" content="width=640; initial-scale=0.5; maximum-scale=1.0; user-scalable=1;" /> 
+<title>上网登录</title>
+<!--Dr.COMWebLoginID_0.htm-->
+<script language="javascript" type="text/javascript" src="a41.js"></script>
+</head>
+<body onload="setFormFocus();">
+<style><!--
+a {text-decoration: none;}
+body {margin:0; padding:0; text-align:center; background-color:#f5f5f5;}
+.font1 {font-family:微软雅黑; font-size: 18px; line-height: 30px; color:#5F6468;}
+.input-border{font-family:微软雅黑;border:1px solid #b8b8b8; width:288px; height:34px; line-height:34px; font-size:18px;}
+.con {width: 640px; height:960px; margin-right: auto; margin-left: auto;}
+.main {background-image: url('a17.jpg'); background-repeat: no-repeat; float: left;width: 640px; height:960px;}
+.main .logo {float:left; margin:70px 80px;}
+.main .welcome {float: left;height:250px; width:480px; margin:40px 80px; font-family:微软雅黑; font-size: 16px; line-height: 24px; color:#5F6468; text-align:left;}
+.main .login {float: left;height:220px; width:500px; margin:10px 80px; font-family:微软雅黑; font-size: 16px; line-height: 24px; color:#5F6468;}
+.main .foot {float:left; height:25px; width:640px; font-family:微软雅黑; font-size: 12px; line-height: 16px; color:#5F6468; margin:130px 0px;}
+.btn {background:url('a03.gif') no-repeat left center; height:38px; width:130px; font-family:微软雅黑; border:none; font-size:18px; line-height:27px; color:#fff;}
+-->
+</style>
+<div class="con"> 
+<div class="main">
+<div class="logo"><img border="0" src="a02.jpg"></div>
+<div class="bg">
+<div class="welcome">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
+<div class="login">
+<form name="f1" method="post" action="" onSubmit="return ee()">	
+<table border="0" width="100%" cellspacing="1" cellpadding="0" class="font1">
+	<tr>
+		<td height="60" width="31%" align="center">账　号&nbsp; (Account)</td>
+		<td height="60" width="68%"><input id=username name="DDDDD" type="text" maxlength="26" class="input-border" ></td>
+	</tr>
+	<tr>
+		<td height="60" width="31%" align="center">密　码 (Password)</td>
+		<td height="60" width="68%"><input id=password name="upass" type="password" maxlength="16" class="input-border" ></td>
+	</tr>
+	<tr>
+		<td height="40" width="31%" align="center"></td>
+		<td height="40" width="68%">
+		<!--<a target="_blank" onclick="gotoCreate('a44.htm', getQueryString('vlanid'), getQueryString('ip'), getQueryString('mac'))" style="cursor:hand;"><span style="color:#CC3300;">注册账号</span></a>-->
+		</td>
+	</tr>
+	<tr>
+		<td height="60" width="31%">
+		<p align="center"><INPUT value=1 type=checkbox name=save_me>保存 (Save)</td>
+		<td height="60" width="68%">
+		<p align="left"><input id="login" type="submit" name="0MKKey" value="登录 (Login)" class="btn">&nbsp;&nbsp;&nbsp;<input type="button" name="" onClick="reset();return false;" value="重置 (Reset)"class="btn"></td>
+	</tr>
+</table>
+</form>
+<form name="f0" method="post" action="">
+<input type="hidden" name="DDDDD" value="0" />
+<input type="hidden" name="upass" value="0" />
+<input type="hidden" name="R1" value="0" />
+<input type="hidden" name="R2" value="0" />
+<input type="hidden" name="para" value="00" />
+<input type="hidden" name="0MKKey" value="123456" />
+</form>
+</div>
+</div>
+<div class="foot">本宽带接入系统由城市热点提供.</div>
+</div>
+</div>
+</div>
+</body>
+</html>
+<script type="text/JavaScript">
+// 页面账号密码保存
+var cook = getCookie("md5_login");
+if(cook != null){
+	var arr = cook.split("|");
+	var uname = document.getElementById("username").value = arr[0];
+	var pass = document.getElementById("password").value = arr[1];
+	document.getElementsByName("save_me")[0].checked = true;
+}
+</script>

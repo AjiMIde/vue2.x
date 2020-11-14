@@ -5,7 +5,7 @@ Windows Registry Editor Version 5.00
 "URL Protocol"=""
 
 [HKEY_CLASSES_ROOT\ajiprotocalwechat\DefaultIcon]
-@="D:\\Program\\QQ\\WeChat\\WeChat.exe"
+@="C:\\Aji\\NormalProgram\\Tencent\\WeChat\\WeChat.exe"
 
 [HKEY_CLASSES_ROOT\ajiprotocalwechat\shell]
 @=""
@@ -14,4 +14,4 @@ Windows Registry Editor Version 5.00
 @=""
 
 [HKEY_CLASSES_ROOT\ajiprotocalwechat\shell\open\command]
-@="\"D:\\Program\\QQ\\WeChat\\WeChat.exe\" "
+@="\"C:\\Aji\\NormalProgram\\Tencent\\WeChat\\WeChat.exe\" "

@@ -1,0 +1,27 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>Logout</title>
+<script language="javascript">
+s1=020;sec=1;uf=1;df=1                                     ;
+url1='http://1.1.1.1:9002/0'                 ;url2='http://1.1.1.1/F'            ;
+s2=0;
+function ee(){if(s2!=1){window.open(url1,'','width=280,height=38,left=0,top=0,resizable=1');window.close();}}
+function wc(){if(window.confirm("关闭此窗口意味着结束此次连接，请确认退出吗？Closing the window means ending the link. Press the Confirm to logout.")){s2=1;window.open(url2);window.close()}}
+</script>
+</head>
+
+<body onunload="ee()" bgcolor="#EFF9FE">
+<div align=center>
+<table>
+	<p></p>
+	<tr>
+		<td height=30>
+		<div align=center>
+			<a style="text-decoration:none;" href="javascript:wc()"><font color="#5F6468" style="font-size: 9pt;">注销 Logout</font></a>
+		</div>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

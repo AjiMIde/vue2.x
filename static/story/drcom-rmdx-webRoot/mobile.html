@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>认证成功</title>
+	<link rel="stylesheet" href="css/css.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="header" style='background-color:#324235;'>
+	<div class="left">
+		<p class='h_1'>网络已连接</p><p class='h_2'>Connected</p>
+	</div>
+	<div class="right">
+		<img class="l_1" src="images/ruc-logo.png" alt="" />
+	</div>
+</div>
+<div class="ebitems">
+
+		<div class="item offline" data-id="1">
+			<div class="left">
+				<span class="tb">
+					<img class="on" src="images/r-suc.png" alt="">
+					<img class="off" src="images/r-off.png" alt="">
+				</span>
+				<span class="title">111</span>
+				<input class="title-text" type="text" value="111" />
+			</div>
+			<div class="right">
+				<a class="btn_r l1 btn_hide" href="javascript:;" ><img src="images/b-l1.png" alt="下线" title="下线"></a>
+				<a class="btn_r l2 btn_show" href="javascript:;" data-mac-id=""><img src="images/b-l2.png" alt="删除" title="删除"></a>
+				<a class="btn_r l3 btn_show" href="javascript:;"><img src="images/b-l3.png" alt="改名" title="改名"></a>
+				<a class="btn_r l4 btn_hide" href="javascript:;" data-id="" data-mac-id=""><img src="images/b-l4.png" alt="确认" title="确认"></a>
+				<a class="btn_r l5 btn_hide" href="javascript:;"><img src="images/b-l5.png" alt="取消" title="取消"></a>
+			</div>
+		</div>
+
+		<div class="item online" data-id="1">
+			<div class="left">
+				<span class="tb">
+					<img class="on" src="images/r-suc.png" alt="">
+					<img class="off" src="images/r-off.png" alt="">
+				</span>
+				<span class="title">222</span>
+				<input class="title-text" type="text" value="222" />
+			</div>
+			<div class="right">
+				<a class="btn_r l1 btn_show" href="javascript:;" data-mac-ip=""><img src="images/b-l1.png" alt="下线" title="下线"></a>
+				<a class="btn_r l2 btn_hide" href="javascript:;" ><img src="images/b-l2.png" alt="删除" title="删除"></a>
+				<a class="btn_r l3 btn_show" href="javascript:;"><img src="images/b-l3.png" alt="改名" title="改名"></a>
+				<a class="btn_r l4 btn_hide" href="javascript:;" data-id="" data-mac-id=""><img src="images/b-l4.png" alt="确认" title="确认"></a>
+				<a class="btn_r l5 btn_hide" href="javascript:;"><img src="images/b-l5.png" alt="取消" title="取消"></a>
+			</div>
+		</div>
+
+</div>
+<div class="detail_panel">
+	<div class="panel_move">
+	<div class="details">
+		<div class="ditem frbg">
+			<div class="ll">
+				<img src="images/s-l1.png" alt="">
+			</div>
+			<div class="rr">
+				<span class="title">计费周期</span>
+				<span class="content date">
+					<span class="up"></span><br><span class="down">~</span>
+				</span>
+			</div>
+		</div>
+		<div class="ditem">
+			<div class="ll">
+				<img src="images/s-l2.png" alt="">
+			</div>
+			<div class="rr">
+				<span class="title">本月用量</span>
+				<span class="content"><span class="dw"></span></span>
+			</div>
+		</div>
+		<div class="ditem">
+			<div class="ll">
+				<img src="images/s-l3.png" alt="">
+			</div>
+			<div class="rr">
+				<span class="title">流量剩余</span>
+				<span class="content"><span class="dw"></span></span>
+			</div>
+		</div>
+		<div class="ditem">
+			<div class="ll">
+				<img src="images/s-l4.png" alt="">
+			</div>
+			<div class="rr last">
+				<span class="title">资金剩余</span>
+				<span class="content"><span class="dw">元</span></span>
+			</div>
+		</div>
+	</div>
+	<div class="control">
+
+		<div class="inputbox">
+			<div id='panel_cls' style="display:none" class="cardinput">
+				<input class="lg" type="text" placeholder="卡号"/> <span style="font-size:30px; line-height:30px; color:#727E52;">-</span> <input class="sm" type="text" placeholder="密码" />
+			</div>
+
+			<div id='panel_ykt' style="display:none;">
+				<ul class="y_creat_cls x_creat_cls3">
+					<li>
+						<div id="money_slide" class="x_line2"></div>
+						<div>转 <span id="moneycount">0</span> 元</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="centerbox">
+				<div class="card">
+					<!--<img src="images/czk.png" style="width:100%; margin-top:15px;"/>-->
+					<span class="cord_bg"></span>
+				</div>
+				<div class="radios">
+					<p>
+					<input id="ykt" type="radio" name="card-type"/> 一卡通
+					</p>
+					<p>
+					<input id="cck" type="radio" name="card-type"/> 充值卡
+					</p>
+					<p>
+					<input id="llk" type="radio" name="card-type"/> 流量卡
+					</p>
+				</div>
+				<div style="clear:both"></div>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+
+<div class="control_panel">
+	<div class="button" id="panel1">
+		<a href="javascript:;" id="cz_btn">充值/充流量</a>
+	</div>
+	<div class="button" id="panel2" style="display:none">
+		<a href="javascript:;" id="submit_btn">确认</a>
+		<a class="cancel" href="javascript:;" id="cancel_btn">取消</a>
+	</div>
+</div>
+
+<link rel="stylesheet" href="css/jquery-ui.min.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

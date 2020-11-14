@@ -5,7 +5,7 @@ Windows Registry Editor Version 5.00
 "URL Protocol"=""
 
 [HKEY_CLASSES_ROOT\ajiprotocalxxnet\DefaultIcon]
-@="D:\\Dev\\XX-Net-master\\start.vbs"
+@="H:\\DevProgram\\XX-Net-3.11.15\\start.vbs"
 
 [HKEY_CLASSES_ROOT\ajiprotocalxxnet\shell]
 @=""
@@ -14,4 +14,4 @@ Windows Registry Editor Version 5.00
 @=""
 
 [HKEY_CLASSES_ROOT\ajiprotocalxxnet\shell\open\command]
-@="\"D:\\Dev\\XX-Net-master\\start.vbs\" "
+@="\"H:\\DevProgram\\XX-Net-3.11.15\\start.vbs\" "

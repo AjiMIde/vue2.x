@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title></title> 
+<!--Dr.COMWebLoginID_0.htm-->
+
+<script language="javascript1.5" type="text/javascript" src="a41.js"></script>
+<script type="text/javascript"> 
+sv=0;sv1=0;v6='http://                                                 ';myv6ip='                                       ';v4serip='192.168.100.093';m46=0;v46ip='123.123.123.123'                        ;
+vid=1234;mip=123456789012;Gno=0000;vlanid="1234";AC="12345678901234567890123456";ipm="12345678";ss1="123456789012";ss2="1234";ss3="12345678";ss4="123456789012";ss5="000.000.000.000";ss6="000.000.000.000";hotel=0;timet=00000000000;
+
+if((AC!="12345678901234567890123456")&&(AC!="")){
+	if(hotel!=0)window.location="7.htm";
+}
+
+</script>
+</head>
+
+<body >
+<form name="f79" action=""+window.location.search method=post>
+<input type=hidden name=DDDDD value=0>
+<input type=hidden name=upass value=10,30>
+<input type=hidden name=R4 value=2>
+<input type=hidden name=0MKKey value='login'>
+</form>
+
+<form name="f78" action=""+window.location.search method=post>
+<input type=hidden name=DDDDD value=0>
+<input type=hidden name=upass value=20,70>
+<input type=hidden name=R4 value=2>
+<input type=hidden name=0MKKey value='login'>
+</form>
+
+</body>
+</html>
+<script>
+// 访问设备:0-其他；1-PC；2-手机；3-平板
+var iTermType = getTermType();
+
+var url = window.location.search;
+
+authexenable=0;
+authtype=1;
+authloginport=80;
+authloginpath='';
+authloginparam='';
+authlogoutpath='';
+authlogoutport=80;
+queryport=80;
+isquery=0;
+querypath='';
+queryparam='';
+authhost='';
+authoffpost='';
+authsuccess='Dr.COMWebLoginID_3.htm';
+authuserfield='DDDDD';
+authpassfield='upass';
+
+portalid='BJ0301128_000';
+serialno='';
+portalname='中国人民大学';
+logourl='';
+bannerurl='';
+welcome='';
+businessurl='';
+portalver='0010300000';
+
+var reg = new RegExp("(^|&)drcomver([^&]*)(&|$)", "i");
+var r = window.location.search.substr(1).match(reg);
+if(r != null)
+{
+	document.write("portalname="+portalname+"<br>");
+	document.write("portalide="+portalid+"<br>");
+	document.write("portalver="+portalver+"<br>");
+}else
+
+if(url.indexOf("?") > 0) url = url.substr(url.indexOf("?"));
+
+if(iTermType == 2){
+	if(enPerceive == 1){
+		document.f79.action=""+url;
+		document.f79.submit();
+	}
+	else{
+		window.location.href="a30.htm"+url;
+	}
+}
+else{
+	if(enPerceive == 1){
+		document.f78.action=""+url;
+		document.f78.submit();
+	}
+	else{
+		window.location.href="a70.htm"+url;
+	}
+}
+</script>

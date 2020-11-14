@@ -1,0 +1,26 @@
+<html>
+<head>
+<script language="javascript1.5" type="text/javascript" src="a41.js"></script>
+<script>
+function autosubmit(){
+//alert('a11 here');
+
+//alert(getQueryString('uname'));
+
+
+document.myForm.DDDDD.value=getQueryString('uname');
+document.myForm.upass.value=getQueryString('upass');
+document.myForm.submit();
+
+}
+</script>
+<title></title>
+</head>
+<body onload="autosubmit()">
+<form name="f1" method="post" action="http://192.168.33.23/a70.htm">
+<INPUT TYPE="hidden" NAME="DDDDD" value="">
+<INPUT TYPE="hidden" NAME="upass" value="">
+<INPUT TYPE="hidden" NAME="0MKKey" value="login">
+</FORM>
+</body>
+</html>

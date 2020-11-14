@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+.container{ width:100%; margin:0 auto;}
+*{ margin:0; padding:0; list-style:none; font-size:14px;}
+.pr_tit{ padding:60px 0 0 0; font-size:36px; vertical-align:middle;}
+.pr_tit img,.pr_tit span{ vertical-align:middle;}
+.pr_tit span{ font-size:36px;}
+.pr_info{ height:50px; line-height:24px; font-size:14px;}
+.pr_details{ position:relative;}
+.pr_details .pr_avatar{ float:left; width:135px; margin:0 25px 0 15px;}
+.pr_details ul{ margin:0; padding:0; list-style:none;}
+.pr_details li{ line-height:28px;}
+.pr_details .pr_ewm{ position:absolute; right:20px; top:0; padding:5px 8px; width:224px; height:46px; border:1px solid #000000; border-radius:3px;}
+.pr_details .pr_ewm img{ }
+.pr_tit_a{ font-size:14px; color:#000000; clear:both;}
+.pr_reset{ margin:0; padding:0; list-style:none; clear:both;}
+.pr_reset dt{ padding:35px 0 0 0; line-height:24px; font-weight:normal; }
+.pr_reset dd{ line-height:24px; font-size:16px; font-weight:bold;}
+.pr_pt20{ padding-top:20px!important;}
+.pr_pt0{ padding-top:0px!important;}
+.pr_two{ margin-top:35px; padding-bottom:10px; margin-bottom:0; font-size:14px; color:#000000;}
+.pr_tit_a{ padding:45px 0 10px 0;}
+.pr_h75{ height:75px;}
+.pr_paperwork{ clear:both; width:100%;}
+.pr_paperwork img{ float:left;}
+.pr_paperwork .pr_r{ float:left; padding:0 0 0 30px;}
+.pr_paperwork .pr_r span{ font-size:14px; color:#000000;}
+.pr_gdoc{ clear:both; width:100%;position:relative; min-height:80px; padding:15px 0 0 70px; line-height:24px;}
+.pr_gdoc img{ position:absolute; left:8px; top:15px;}
+.pr_gdoc .pr_gname{ color:#000000;}
+.pr_gdoc .pr_gsize{ color:#000000;}
+.pr_dt{ margin:15px 0 10px;}
+.pr_dt span{ margin-right:15px;}
+.pr_dt span img{ vertical-align:middle;}
+.pr_dd{ font-size:16px; font-weight:bold; line-height:24px;}
+.pr_result{ border:1px solid #000000; border-radius:3px; margin-bottom:15px; padding:13px 15px; line-height:24px;}
+.pr_foot{ text-align:right; font-size:16px; color:#000000; font-weight:bold;}
+.pr_tip{  padding:5px 0 0 0;}
+.pr_tip img{ margin-right:5px;}
+.pr_ipt{ border:1px solid #000000; border-radius:3px; min-height:38px; line-height:24px; padding:7px 15px;}
+.pr_area{ margin-bottom:15px; border:1px solid #000000; border-radius:3px; min-height:86px; line-height:24px; padding:7px 15px;}
+.checkbox{ font-size:16px;}
+.pr_city_list{ padding:0 0 0 65px;}

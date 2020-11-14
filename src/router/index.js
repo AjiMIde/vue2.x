@@ -6,7 +6,10 @@ import testHttp from '@/app/test/http.vue'
 import ppt from './ppt.js'
 import play from './play.js'
 import html5 from './html5.js'
-import project from './projectSummary.js'
+import css from './css.js'
+import test from './test.js'
+import tools from './tools.js'
+import story from './story.js'
 
 Vue.use(Router)
 
@@ -23,10 +26,6 @@ let defaults = [
     name: 'testHttp',
     component: testHttp
   }, {
-    path: '/read-me',
-    name: 'readMe',
-    component: r => require.ensure([], () => r(require('@/app/readMe/readMe.vue')), '')
-  }, {
     path: '/hello',
     component: Hello
   }, {
@@ -36,6 +35,9 @@ let defaults = [
   }]
 
 export default new Router({
-  routes: project.concat(defaults).concat(ppt).concat(play).concat(html5)
+  routes: (defaults).concat(ppt).concat(play).concat(html5).concat(test).concat(css).concat(tools).concat(story),
+  scrollBehavior (to, from, savedPosition) {
+    return {x: 0, y: 0}
+  }
   // base: '/app/'
 })

@@ -18,9 +18,15 @@
           <a id='protocoltim' href="ajiprotocoltim://"> Tim </a>
           <a id='protocolwechat' href="ajiprotocalwechat://"> Wechat </a>
           <a id='protocolfoxmail' href="ajiprotocalFoxmail://"> Foxmail </a>
-          <a id='protocol360' href="ajiprotocal360://"> 360 </a>
-          <a id='protocolworktile' href="http://my.worktile.com/dashboard" target="_blank"> Worktile </a>
-          <a id='protocolwox' href="ajiprotocalwox://"> wox </a>
+          <!--<a id='protocol360' href="ajiprotocal360://"> 360 </a>-->
+          <!--<a id='protocolxxnet' href="ajiprotocalxxnet://"> xxnet </a>-->
+          <!--<a id='protocolworktile' href="http://my.worktile.com/dashboard" target="_blank"> Worktile </a>-->
+          <a id='protocolteambition' href="https://www.teambition.com/project/5ac2551cbe97d01847b1834f/tasks/scrum/5ac2551cbe97d01847b18351"
+             target="_blank"> Teambition EveryDay </a>
+          <a id='protocoltapd' href="https://www.tapd.cn/22298271/board/index?board_id=1122298271001000025&board_type=resource&view_type=board"
+             target="_blank"> Tapd Fzs FrontEnd </a>
+          <!--<a id='protocoleverything' href="ajiprotocaleverything://"> everything </a>-->
+          <!--<a id='protocolwox' href="ajiprotocalwox://"> wox </a>-->
         </li>
 
         <li>通过定时程序，并使用 click 事件自动响应 a 标签，打开应用程序</li>
@@ -65,7 +71,7 @@
         // 运行程序
         launchExe: {
           timer: '',
-          delay: 5,       // 延迟多少秒启动程序
+          delay: 10,       // 延迟多少秒启动程序
           seconds: 0,
           minutes: 0
         },
@@ -78,7 +84,8 @@
         console.log('%c' + args, this.clogStyle)
       },
 
-      // 生产上，有些问题，靠这种，破方法解决
+      // 生产上，有些问题，靠这种，破方法解决，现在问题已经解决
+      // 原因是 css 的 mine type (content-type) 没有设置，现在在 dist/index.js 中已经有解决
       getStyle () {
         if (window.location.port === '8888') {
           let style = document.getElementsByTagName('link')[0]
@@ -166,12 +173,15 @@
         if (this.launchExeInfo.length === 0) {   // 如果今天还没有运行过
           this.launchExeInfo = []
 
-          this.launchExeInfo.push({type: 'worktile', status: 'noLaunch'})
           this.launchExeInfo.push({type: 'tim', status: 'noLaunch'}) // noLaunch/launched/launching/cancel
           this.launchExeInfo.push({type: 'wechat', status: 'noLaunch'})
           this.launchExeInfo.push({type: 'foxmail', status: 'noLaunch'})
-          this.launchExeInfo.push({type: 'wox', status: 'noLaunch'})
-          this.launchExeInfo.push({type: '360', status: 'cancel'})
+          this.launchExeInfo.push({type: 'teambition', status: 'noLaunch'})
+          this.launchExeInfo.push({type: 'tapd', status: 'noLaunch'})
+          // this.launchExeInfo.push({type: 'worktile', status: 'noLaunch'})
+          // this.launchExeInfo.push({type: 'everything', status: 'noLaunch'})
+          // this.launchExeInfo.push({type: 'wox', status: 'noLaunch'})
+          // this.launchExeInfo.push({type: '360', status: 'cancel'})
 
           FzsLocalStorage.set(date, this.launchExeInfo)
         }
@@ -180,14 +190,14 @@
           window.clearInterval(this.launchExe.timer)
         }
 
-        let minM = this.launchExe.delay      // 最小时间，在此时间后开始启动应用程序
+        let minS = this.launchExe.delay      // 最小时间，在此时间后开始启动应用程序
         this.launchExe.timer = window.setInterval(() => {
           // 计算时间
           let s = this.launchExe.seconds++
-          let m = this.launchExe.minutes = parseInt(s / 60)
+          // let m = this.launchExe.minutes = parseInt(s / 60)
 
-          if (m === minM) {
-            minM++
+          if (s === minS) {
+            minS++
             for (let i = 0; i < this.launchExeInfo.length; i++) {
               let exe = this.launchExeInfo[i]
               if (exe.status === 'noLaunch') {
@@ -197,7 +207,7 @@
 
                 window.setTimeout(() => {
                   exe.status = 'launched'
-                  document.getElementById('protocol' + exe.type).click()
+                    // document.getElementById('protocol' + exe.type).click()
                   this.log('Exe: launching ' + exe.type)
                   this.$set(this.launchExeInfo, i, exe)
                   FzsLocalStorage.set(date, this.launchExeInfo)
@@ -242,7 +252,7 @@
       this.setNotify('你好', '开始工作了')
       this.startWholePointTip()
       this.inverseAndOpenExe()
-      this.getStyle()
+      // this.getStyle()
     }
   }
 </script>

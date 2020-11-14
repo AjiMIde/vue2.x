@@ -1,6 +1,5 @@
 <template>
   <div class="index">
-
     <div class="header">
       <div class="logo">
         <img src="../../assets/img/index/bee.png" alt="">
@@ -76,7 +75,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -96,6 +94,9 @@
       this.navList.push({name: '测试', url: 'test', title: '测试', desc: '自动化测试、Key事项', color: '#cf4646'})
       this.navList.push({name: 'Play', url: 'play', title: '玩物', desc: 'key事项提醒KeyMatter', color: '#4caf50'})
       this.navList.push({name: 'HTML5', url: 'html5', title: 'HTML5', desc: '很多？H5 新特性', color: '#4ad5ff'})
+      this.navList.push({name: 'CSS', url: 'css', title: 'CSS', desc: 'CSS布局，及相关样式', color: '#333333'})
+      this.navList.push({name: 'Tools', url: 'tools', title: 'Tools', desc: '工具集~', color: '#87dfaf'})
+      this.navList.push({name: 'Story', url: 'story', title: '故事', desc: '从过去，到现在', color: '#ffba35'})
     }
   }
 

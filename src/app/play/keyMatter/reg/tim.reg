@@ -5,7 +5,7 @@ Windows Registry Editor Version 5.00
 "URL Protocol"=""
 
 [HKEY_CLASSES_ROOT\ajiprotocoltim\DefaultIcon]
-@="D:\\Program\\TIM\\Bin\\QQScLauncher.exe"
+@="H:\\NormalProgram\\Tecent\\Tim\Bin\\QQScLauncher.exe"
 
 [HKEY_CLASSES_ROOT\ajiprotocoltim\shell]
 @=""
@@ -14,4 +14,4 @@ Windows Registry Editor Version 5.00
 @=""
 
 [HKEY_CLASSES_ROOT\ajiprotocoltim\shell\open\command]
-@="\"D:\\Program\\TIM\\Bin\\QQScLauncher.exe\" "
+@="\"H:\\NormalProgram\\Tecent\\Tim\Bin\\QQScLauncher.exe\" "

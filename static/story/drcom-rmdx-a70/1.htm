@@ -1,0 +1,47 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>Drcom上网信息窗                         </title>
+<!--Dr.COMWebLoginID_1.htm-->
+<script language="javascript" type="text/javascript" src="a41.js"></script>
+<script language="javascript">
+businessurl='';
+welcome='';
+bannerurl='';
+logourl='';
+serialno='';
+portalver='0010300000';
+portalname='中国人民大学';
+portalid='BJ0301128_000';
+
+    time='1234567890';flow='1234567890';fsele=0;fee='1234567890';xsele=0;xip='000.000.000.000.';
+    flow0=flow%1024;flow1=flow-flow0;flow0=flow0*1000;flow0=flow0-flow0%1024;fee1=fee-fee%100;
+    flow3='.';
+    pwm=1;v6af=1234567890;v6df=1234567890;uid='12345678901234567890123456';pwd='1234567890123456';v46m=001;v4ip='192.168.100.100';v6ip='0000:0000:0000:0000:0000:0000:0000:0000';////
+	
+	function checkphone(){
+		//alert("uid:"+uid);
+		document.uidPostForm.UID.value = uid;
+
+		//window.location = location.protocol + "//" + location.hostname + "/3.htm";
+	
+		document.uidPostForm.action = window.location.protocol + "//" + window.location.hostname + ":801/eportal/Bootstrap/WebRoot/index.php";
+
+		document.uidPostForm.submit();	
+	}
+</script>
+
+
+</head>
+<body  onload="checkphone()">
+
+    <!--当登陆成功时， post此form到成功的 php页-->
+    <form name="uidPostForm" action="/" method=post style="display: none">
+        <input type="hidden" name="UID" value="">
+        <input type="hidden" name="is_lack" value="0">
+    </form>
+    
+</body>
+</html>
+

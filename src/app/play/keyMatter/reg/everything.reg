@@ -1,0 +1,16 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\ajiprotocaleverything]
+@="ajiprotocaleverything Protocol"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\ajiprotocaleverything\DefaultIcon]
+@="D:\\Program\\Everything\\Everything.exe"
+[HKEY_CLASSES_ROOT\ajiprotocaleverything\shell]
+@=""
+
+[HKEY_CLASSES_ROOT\ajiprotocaleverything\shell\open]
+@=""
+
+[HKEY_CLASSES_ROOT\ajiprotocaleverything\shell\open\command]
+@="\"D:\\Program\\Everything\\Everything.exe\" "

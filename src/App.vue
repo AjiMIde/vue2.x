@@ -52,6 +52,7 @@
     },
     watch: {
       '$route': (a, b, c) => {
+        window.scrollTo(0, 0)
         window.setTimeout(() => {
           if (window.hljs) {
             let pres = window.document.getElementsByTagName('pre')
@@ -59,7 +60,7 @@
               window.hljs.highlightBlock(pre)
             }
           }
-          this.a.methods.setH4Click()
+          // this.a.methods.setH4Click()
         }, 500)
       }
     }

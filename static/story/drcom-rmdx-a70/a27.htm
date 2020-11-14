@@ -1,0 +1,21 @@
+<html><head>
+<script>
+Rpost=0;///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function autosubmit(){
+if(Rpost!=1)return;
+document.myForm.DDDDD.value=uid;
+document.myForm.upass.value=pwd;
+document.myForm.submit();
+}
+</script>
+<title></title>
+</head>
+
+<body onload="autosubmit()">
+<FORM NAME="myForm" action='/' method=post>
+<INPUT TYPE="hidden" NAME="DDDDD" value="ishare">
+<INPUT TYPE="hidden" NAME="upass" value="123">
+<INPUT TYPE="hidden" NAME="0MKKey" value="login">
+</FORM>
+</body>
+</html>

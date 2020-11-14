@@ -4,7 +4,7 @@ Vue2.x index
 @import '../common/Key-More';
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: Monospaced Number,Chinese Quote,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -179,7 +179,7 @@ Vue2.x index
       color: #1d95ff;
     }
   }
-  .para pre {
+  pre, .para pre {
     margin: 6px 0;
     font-family: consolas, serif;
     background: aliceblue;
@@ -187,7 +187,7 @@ Vue2.x index
     code {
       font-family: consolas, serif;
       background: aliceblue;
-      margin-left: -40px;
+      //margin-left: 0px;
     }
   }
 
@@ -210,6 +210,46 @@ Vue2.x index
     }
     td {
       padding: 6px 8px;
+    }
+  }
+
+  .src-list {
+    width:auto;
+    ul {
+      text-align: left;
+      li {
+        display: inline-block;
+        padding: 4px 6px;
+        margin: 0px 10px;
+        span {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+.markdown-html-view {
+  color: #314659;
+  h2, h4 {
+    font-weight: 500;
+    color: #0d1a26;
+  }
+  > h2:first-child {
+    margin-top: 20px;
+  }
+  h2 {
+    margin-top: 200px;
+  }
+  h4 {
+    font-size: 17px;
+  }
+  ul {
+    padding: 0 0 0 40px;
+    line-height: 2.2;
+    list-style: disc;
+    li {
+      font-size: 15px;
     }
   }
 }
@@ -285,11 +325,6 @@ Vue2.x index
       }
     }
   }
-}
-
-
-#app {
-  position: relative;
 }
 
 #app .circle-dot {

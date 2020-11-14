@@ -1,0 +1,84 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta id="viewport" name="viewport" content="width=640; initial-scale=0.5; maximum-scale=1.0; user-scalable=1;" /> 
+<title>上网信息</title>
+<!--Dr.COMWebLoginID_1.htm-->
+<script language="javascript" type="text/javascript" src="a41.js"></script>
+
+</head>
+<script language="JavaScript"><!--
+time='1234567890';flow='1234567890';fsele=0;fee='1234567890';xsele=0;xip='000.000.000.000.';
+flow0=flow%1024;flow1=flow-flow0;flow0=flow0*1000;flow0=flow0-flow0%1024;fee1=fee-fee%100;
+flow3='.';
+if(flow0/1024<10)flow3='.00';
+else{if(flow0/1024<100)flow3='.0';}
+function DispTFM(sele){
+	switch(sele){
+		case 0:
+			if(enPortal!=1){
+				document.write("已使用时间 Used time : "+time +" Min");
+			}
+			break;
+		case 1:
+			if(enPortal!=1){
+				document.write("已使用流量 Used flux : "+flow1/1024+flow3+flow0/1024+" MByte");
+			}
+			break;
+		case 2:
+			if(fsele==1)document.write("余额 Balance : "+"RMB"+fee1/10000);
+			break;
+		case 3:
+			if(xsele==1)document.write("外网映射地址 External network IP address mapping : "+xip);
+			break;
+	}
+}
+url3='1.htm';url4='F.htm';
+s2=0;
+function ee(){}//if(s2!=1){window.open(url3,'','width=610,height=450,left=0,top=0,resizable=1');window.close();}}
+//function wc(){if(window.confirm("确定注销? Logout Confirmed?")){s2=1;window.location=url4}}
+// --></script>
+<body>
+	<style><!--
+a {text-decoration: none;}
+body {margin:0; padding:0; text-align:center; background-color:#f5f5f5;}
+.font1 {font-family:微软雅黑; font-size: 18px; line-height: 30px; color:#5F6468;}
+.input-border{font-family:微软雅黑;border:1px solid #b8b8b8; width:288px; height:34px; line-height:34px; font-size:18px;}
+.con {width: 640px; height:960px; margin-right: auto; margin-left: auto;}
+.main {background-image: url('a36.jpg'); background-repeat: no-repeat; float: left;width: 640px; height:960px;}
+.main .logo {float:left; margin:70px 80px;}
+.main .welcome {float: left;height:250px; width:480px; margin:40px 80px; font-family:微软雅黑; font-size: 16px; line-height: 24px; color:#5F6468; text-align:left;}
+.main .login {float: left;height:220px; width:500px; margin:10px 80px; font-family:微软雅黑; font-size: 16px; line-height: 24px; color:#5F6468;}
+.main .foot {float:left; height:25px; width:640px; font-family:微软雅黑; font-size: 12px; line-height: 16px; color:#5F6468; margin:130px 0px;}
+.btn {background:url('a03.gif') no-repeat left center; height:38px; width:130px; font-family:微软雅黑; border:none; font-size:18px; line-height:27px; color:#fff;}
+-->
+</style>
+<div class="con"> 
+<div class="main">
+<div class="logo"><img border="0" src="a02.jpg"></div>
+<div class="bg">
+<div class="welcome">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
+<div class="login">
+<form name="f1" method="post" action="">
+<table border="0" width="100%" cellspacing="1" cellpadding="0" class="font1">
+	<tr>
+		<td height="120" width="99%" align="center">
+		<script language="javascript">DispTFM(0)</script><br>
+        <script language="javascript">DispTFM(1)</script><br>
+        <script language="javascript">DispTFM(2)</script><br>
+        <script language="javascript">DispTFM(3)</script>
+        </td>
+	</tr>
+	<tr>
+		<td height="60" width="99%">
+		<p align="center">
+		<input type="button" onClick="javascript:wc()" name="logout" value="注销 (Logout)" class="btn">
+		</td>
+	</tr>
+</table>
+</form>
+</div>
+</div>
+<div class="foot">本宽带接入系统由城市热点提供.</div>
+</div>
+</div>
+</body></html>

@@ -1,7 +1,8 @@
 <template>
   <div class="fzs-ui-input">
     <div class="input-input">
-      <input v-if="c_type ==='password'" ref="theInput" @keydown="onKeydown" :placeholder='c_placeholder' type='password' @input="onInput"
+      <input v-if="c_type ==='password'" ref="theInput" @keydown="onKeydown" :placeholder='c_placeholder'
+             type='password' @input="onInput"
              v-model="c_value" :maxlength="c_maxLength" @blur="onBlur()"/>
       <input v-else ref="theInput" @keydown="onKeydown" :placeholder='c_placeholder' type='text' @input="onInput"
              v-model="c_value" :maxlength="c_maxLength" @blur="onBlur()"/>
@@ -18,12 +19,12 @@
     props: {
       type: {
         type: String,
-        'default': 'text', // support: text, mobile,email, bank, idNo(身份证), captcha（图形验证码）
+        default: 'text',  // support: text, mobile,email, bank, idNo(身份证), captcha（图形验证码）
         required: false
       },
       value: {
         type: String,
-        'default': '',
+        default: '',      // 根据 vue 2.5 版本，使用时设置  v-model 即可
         required: true
       },
       placeholder: {
@@ -33,12 +34,39 @@
       maxLength: {
         default: 0
       },
+      minLength: {
+        default: 0
+      },
       length: {
         default: 0
+      },
+      errorTip: {
+        type: String,
+        default: ''
       },
       captchaUrl: {
         type: String,
         default: ''
+      }
+    },
+
+    data () {
+      return {
+        c_placeholder: '',
+        c_showError: false,
+        c_errorTip: '请输入正确的值',
+        c_dirty: false,
+        //
+        c_closeShow: false,
+        c_value: this._formatCValue(this.value || ''),
+        //
+        c_length: parseInt(this.length) || 0, // 达到某个长度，值才是合法的
+        c_maxLength: parseInt(this.length) || parseInt(this.maxLength) || 10 * 10,
+        c_minLength: parseInt(this.minLength) || 0,
+        //
+        c_type: 'text',                           // 类型，一般为 text，此次为了支付 password
+        tipArray: {},
+        regexAry: {}
       }
     },
 
@@ -48,22 +76,6 @@
       },
       captchaUrl (newV, oldV) {
         this.c_value = '' // 清空
-      }
-    },
-
-    data () {
-      return {
-        c_placeholder: '',
-        c_showError: false,
-        c_errorTip: '',
-        c_dirty: false,
-        c_closeShow: false,
-        c_value: this._formatCValue(this.value || ''),
-        c_maxLength: '',
-        c_length: parseInt(this.length) || 0, // 达到某个长度，值才是合法的
-        c_type: 'text',                           // 类型，一般为 text，此次为了支付 password
-        tipArray: {},
-        regexAry: {}
       }
     },
 
@@ -82,7 +94,7 @@
     },
 
     mounted () {
-      console.log(window.m = this)
+      console.log(window.comp = this)
       this._setPlaceholderAndErrorTip()
       if (this.type.indexOf('password') >= 0) {
         this.c_type = 'password'
@@ -120,46 +132,49 @@
 
       _setPlaceholderAndErrorTip () {
         let item = this.tipArray[this.type]
+        // 既有类型
         if (item) {
-          this.c_placeholder = this.placeholder || item[0] // 如果有强制指定值，则使用该值
+          this.c_placeholder = item[0]
           this.c_errorTip = item[1]
-          this.c_maxLength = parseInt(this.maxLength) || item[2] // 如果有强制指定值，则使用该值
-        } else {
-          this.c_placeholder = this.placeholder || ''
-          this.c_errorTip = '请输入正确的值'
-          // 当有设定 length 值时
-          if (this.c_length > 0) { // length 的优先值大于 maxLength
-            this.c_maxLength = this.c_length
-          } else {
-            this.c_maxLength = parseInt(this.maxLength) || 200
-          }
-          // 当是 type 为密码类型时
-          if (this.type === 'password') {
-            this.c_placeholder = this.placeholder || '请输入密码'
-          }
+          this.c_maxLength = item[2]
+        }
+        // 强制使用
+        if (this.placeholder !== '') {
+          this.c_placeholder = this.placeholder
+        }
+        if (this.errorTip !== '') {
+          this.c_errorTip = this.errorTip
+        }
+        if (this.type === 'password') {
+          this.c_placeholder = this.placeholder || '请输入密码'
         }
       },
 
       _checkValueValid (val) {
+        // 正则判断
         if (this.regexAry[this.type]) {
           return this.regexAry[this.type].test(val)
-        } else if (this.c_length > 0) { // 当限定该值的长度要大于某个限定值时，作此判断
-          if (val.length === this.c_length) {
-            return true
-          } else {
-            return false
-          }
-        } else {
-          return true
         }
+
+        // 长度判断（刚好是某一个长度）
+        if (this.c_length > 0) {
+          return val.length === this.c_length
+        }
+
+        // 最小长度判断
+        if (this.c_minLength > 0) {
+          return val.length >= this.c_minLength
+        }
+        // 其他情况
+        return true
       },
 
       // 输入时，响应
-      onInput () {
-        this.c_value = this._formatCValue(this.c_value)
+      onInput ($evt) {
+        // if ($evt.inputType === 'deleteContentBackward') {
+        // }
 
-//        this.$refs.theInput.blur()
-//        this.$refs.theInput.focus()
+        this.c_value = this._formatCValue(this.c_value)
 
         // 显示清空按钮
         this.c_closeShow = !!(this.c_value)
@@ -169,16 +184,12 @@
         switch (this.type) {
           case 'mobile': {
             value = this.c_value && this.c_value.replace(/[^0-9]/g, '') // 去掉除数字外的多余字符
-            if (this.c_dirty === false && value.length === 11) {
-              this.c_dirty = true
-            }
+            this.c_dirty = (this.c_dirty === false && value.length === 11)
             break
           }
           case 'bank': {
             value = this.c_value && this.c_value.replace(/[^0-9]/g, '') // 去掉除数字外的多余字符
-            if (this.c_dirty === false && (value.length === 16 || value.length === 19)) {
-              this.c_dirty = true
-            }
+            this.c_dirty = (this.c_dirty === false && (value.length === 16 || value.length === 19))
             break
           }
           case 'email': {
@@ -190,16 +201,12 @@
           }
           case 'idNo': {
             value = this.c_value
-            if (this.c_dirty === false && value.length > 15) {
-              this.c_dirty = true // 身份证最短15位
-            }
+            this.c_dirty = (this.c_dirty === false && value.length > 15)  // 身份证最短15位
             break
           }
           case 'captcha': {
             value = this.c_value
-            if (this.c_dirty === false && value.length > 4) {
-              this.c_dirty = true // 验证码最短4位
-            }
+            this.c_dirty = (this.c_dirty === false && value.length > 4) // 验证码最短4位
             break
           }
 
@@ -220,19 +227,16 @@
         }
       },
 
-      onKeydown (event) {},
-
-      onChange () {},
+      onKeydown () {
+      },
 
       emptyText () {
         this.c_value = ''
-        this.onInput()
+        this.onInput({})
       },
 
       onBlur () {
-        if (this.c_value) {
-          this.c_dirty = true
-        }
+        this.c_dirty = !!(this.c_value)
       },
 
       captchaClick () {

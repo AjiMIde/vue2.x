@@ -2,6 +2,7 @@ var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
+
 const vuxLoader = require('vux-loader')
 
 function resolve (dir) {
@@ -74,6 +75,21 @@ const webpackConfig = {
       { // 17-09-15
         test: /\.jade$/,
         loader: 'jade-loader'
+      },
+      // { // aji 18-01-01
+      //   test: /\.md$/,
+      //   use: 'raw-loader'
+      // },
+      {
+        test: /\.md$/,
+        use: [{
+          loader: "html-loader"
+        }, {
+          loader: "markdown-loader",
+          options: {
+            /* your options here */
+          }
+        }]
       }
     ]
   }

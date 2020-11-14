@@ -1,57 +1,46 @@
 <template>
-  <div class="test">
-    <div class="src-list">
-
-      <ul>
-        <li v-for="item in list">
-          <router-link :to="'/ppt/' + item.url + '/'">
-            {{item.title}}
-          </router-link>
-          <span>
-            {{item.date}}
-          </span>
-        </li>
-      </ul>
-
-    </div>
+  <div class="test vux2x-document">
+    <div id="content" v-html='content'></div>
   </div>
 </template>
 <script>
-  import test from '../../api/service.test'
+  import marked from 'marked/lib/marked'
+  import md from './test.md'
 
   export default {
     components: {},
     data () {
       return {
-        list: [
-          {title: 'Chrome Notification', url: 'key-matter-tip', date: '2017-12-20'},
-          {title: 'Vue 总结', url: 'vue-summary'},
-          {title: 'Vue 总结', url: 'vue-summary'}
-        ]
+        content: ''
       }
     },
-    methods: {
-      setTip () {
-        window.setTimeout(() => {
-          let tip = new window.Notification('双十二，买买买', {
-            body: '双十二马上来了，你准备好剁手了吗？千万好货来袭',
-            icon: 'http://localhost/images/notification.png',
-            tag: 1
-          })
-          console.log(tip)
-        }, 5000)
-      }
-    },
+    methods: {},
     watch: {},
     computed: {},
+    created () {
+      console.log(window.content = md)
+      this.content = marked(md)
+      console.log(document.getElementById('content'))
+    },
     mounted () {
-      this.tt = test
-      window.Notification.requestPermission((permission) => {
-        if (permission === 'granted') {
-          this.setTip()
-        }
+      // console.log(window.ts = this)
+      // console.log(window.mk = marked)
+      // let md = 'aaa'
+      this.$nextTick(() => {
+        // document.getElementById('content').innerHTML = marked(md)
+        // let content = document.getElementById('content')
+        // let imgs = content.getElementsByTagName('img')
+        // let img = imgs[0]
+        // let src = img.attributes.src.value
+        // let temp = require(src)
+        // this.temp = temp
+        // console.log('=====' + temp)
+        // console.log(window.cc = content)
       })
     }
   }
 </script>
-<style lang="less"></style>
+<style lang="less">
+  .test {
+  }
+</style>

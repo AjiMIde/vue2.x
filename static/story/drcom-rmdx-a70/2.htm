@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>统一认证 - 中国人民大学</title>
+<!--Dr.COMWebLoginID_2.htm-->
+
+<script>document.write('<script language=javascript src="a41.js?version=1.4_' + (new Date()).valueOf() + '"><\/script>');</script>
+
+<script language="javascript">	
+Msg=00;time='1234567890';flow='1234567890';fsele=0;fee='1234567890';xsele=0;xip='000.000.000.000.';mac='00-00-00-00-00-00';va=00;vb=00;vc=00;vd=0000;ve=0000;vf=0000;
+ipm="12345678";ss1="123456789012";ss2="1234";ss3="12345678";ss4="123456789012";msga='';/* can not modify !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+pp="<p></p>";
+flow0=flow%1024;flow1=flow-flow0;flow0=flow0*1000;flow0=flow0-flow0%1024;fee1=fee-fee%100;
+flow3='.';
+if(flow0/1024<10)flow3='.00';
+else{if(flow0/1024<100)flow3='.0';}
+
+UT="已使用时间 Used time : "+time +" Min"+pp;
+UF="已使用流量 Used flux : "+flow1/1024+flow3+flow0/1024+" MByte"+pp;
+if(fsele==1)UM="本账号余额  Balance : "+"RMB"+fee1/10000;
+UM="";
+
+</script>
+
+</head>
+
+<body id="login">
+
+</body>
+</html>
+<script>
+window.location = window.location.protocol + "//" + window.location.hostname + ":" + window.location.port;
+</script>

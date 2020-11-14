@@ -62,6 +62,11 @@ let testSpec = [{
   component: r => require.ensure([], () => r(require('@/app/ppt/testSpec/summary.vue')), '')
 }]
 
+let fzsUI = [{
+  path: '/ppt/fzs-ui',
+  component: r => require.ensure([], () => r(require('@/app/ppt/fzsUI/fzsUI.vue')), '')
+}]
+
 let index = [{
   path: '/ppt',
   name: 'ppt',
@@ -71,4 +76,4 @@ let index = [{
   component: r => require.ensure([], () => r(require('@/app/ppt/_template.vue')), '')
 }]
 
-export default index.concat(vueSummary).concat(testSpec)
+export default index.concat(vueSummary).concat(testSpec).concat(fzsUI)

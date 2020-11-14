@@ -1,0 +1,295 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="description" content="中国人民大学统一认证平台">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" type="text/css" href="http://222.29.240.155/portal/stylesheets/base.css">
+<link rel="stylesheet" type="text/css" href="http://222.29.240.155/portal/stylesheets/skeleton.css">
+<!-- <link rel="stylesheet" type="text/css" href="http://222.29.240.155/portal/stylesheets/layout.css">-->
+<link rel="stylesheet" type="text/css" href="http://222.29.240.155/portal/css.css">
+<link rel="shortcut icon" href="http://222.29.240.155/portal/favicon.ico">
+<script language="javascript1.5" type="text/javascript" src="a41.js"></script>
+<link rel="apple-touch-icon" href="http://222.29.240.155/portal/icon/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="http://222.29.240.155/portal/icon/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="http://222.29.240.155/portal/icon/apple-touch-icon-114x114.png">
+<style type= text/css >
+	/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) {}
+
+	/* Tablet Portrait size to standard 960 (devices and browsers) */
+	@media only screen and (min-width: 768px) and (max-width: 959px) {
+		.inputbox input {
+			padding-left: 55px !important;
+		}
+	}
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 767px) {
+		.middle {
+		  padding: 30px 0 !important;
+		}
+		.mobile-hidden {
+			display: none !important;
+		}
+		.align-center-s {
+			text-align: center;
+		}
+	}
+
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+	}
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 479px) {
+		.icon-vruc {
+			margin-left: 0 !important;
+		}
+
+	}
+
+
+/* #Font-Face
+================================================== */
+/* 	This is the proper syntax for an @font-face file
+		Just create a "fonts" folder at the root,
+		copy your FontName into code below and remove
+		comment brackets */
+
+@font-face {
+	
+	font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+	/*
+	font-family: 'vruc';
+	src:url('fonts/vruc.eot');
+	src:url('fonts/vruc.eot?#iefix') format('embedded-opentype'),
+		url('fonts/vruc.ttf') format('truetype'),
+		url('fonts/vruc.woff') format('woff'),
+		url('fonts/vruc.svg#vruc') format('svg');
+	*/
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'vruc';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-expand:before {
+	content: "\e600";
+}
+.icon-idcard:before {
+	content: "\e802";
+}
+.icon-cloud:before {
+	content: "\e803";
+}
+.icon-table:before {
+	content: "\e804";
+}
+.icon-mobile:before {
+	content: "\e805";
+}
+.icon-link:before {
+	content: "\e808";
+}
+.icon-vruc:before {
+	content: "\e606";
+}
+.icon-hdd:before {
+	content: "\e806";
+}
+.icon-clock:before {
+	content: "\e800";
+}
+</style>
+<title>统一认证 - 中国人民大学</title>
+<!--Dr.COMWebLoginID_0.htm-->
+<script type="text/javascript" src="http://222.29.240.155/lib/md5.js"></script>
+<script type="text/javascript" src="http://222.29.240.155/js/jquery.js"></script>
+<!--<script type="text/javascript" src="http://222.29.240.155/js/login.js"></script>-->
+<script type="text/javascript">
+sv=0;sv1=0;v6='http://                                                 ';myv6ip='                                       ';v4serip='192.168.100.093';m46=0;v46ip='123.123.123.123'                        ;
+vid=1234;mip=123456789012;Gno=0000;vlanid="1234";AC="12345678901234567890123456";ipm="12345678";ss1="123456789012";ss2="1234";ss3="12345678";ss4="123456789012";ss5="000.000.000.000";ss6="000.000.000.000";
+
+function httpssub(){
+	document.f1.action=" https://"+v4serip;return true;
+}
+function y(e){
+	window.open(e,"","width=800,height=360,left=0,top=0,scrollbars=0");
+}
+
+function et()
+{
+	
+	var usn=document.getElementById("username").value;
+	var tpv=document.getElementById("password").value;
+	if(!usn){
+		alert("请填写用户名");
+		return false;
+	}
+	
+	if(!tpv){
+		alert("请填写密码");
+		return false;
+	}
+
+	var temp_url=window.location.href;
+	var base_url=temp_url.split('?');
+	getLoginInfo(usn,tpv);
+	
+}
+</script>
+</head>
+<body id="login">
+<input type="hidden" id="loading" />
+<input type="hidden" id="loading2" />
+
+	<div class="wrapper">
+		<div class="top mobile-hidden">
+			<div class="container">
+				<div class="sixteen columns">
+					<div class="three columns alpha">
+						<a href="#" class="three columns align-center-s alpha"><img src="http://222.29.240.155/portal/imgs/vruc-logo@2x.png" alt="RUC" class="scale-with-grid logo"></a>
+					</div>
+
+					<div class="five columns align-right mobile-hidden omega">
+						<div class="three columns alpha freshman gray mobile-hidden">短期使用或者路过人大？</div>
+		          		<div class="two columns omega"><a href="http://go.ruc.edu.cn/QuickReg/quickReg_1.html"><button class="btn two columns alpha">手机注册</button></a></div>
+		         	</div>
+			  	</div>
+			</div>
+		</div>
+
+		<div class="middle">
+			<div class="container">
+				<div class="eleven columns mobile-hidden leftbanner">
+					
+					<div class="leftbanner2">
+						<div class="slogon">
+							<span class="main-slogon">见微知著</span>
+							<span class="sub-slogon">感知，决策，学习！</span>
+						</div>
+					</div>
+					<div class="gear-3 rotating"></div>
+					<div class="gear-4 rotating-l"></div>
+				</div>
+				<div class="five columns">
+					<!--<form name="f1" method="post" action="" onSubmit="return ee()"> -->
+						<div class="box-border box-gray five columns alpha tiup-icon radius-l">
+							<div class="formbox center">
+								<h5 class="bord row"><span cl;ass="icon-idcard margin-right-5"></span>身份认证</h5>						
+							<div class="inputbox row">
+								<div class="row">
+									<input type="text" class="username" id="username" name="DDDDD" maxlength="25" placeholder="学工号/手机号/邮箱">
+									<input type="password" class="password" id="password" name="upass" placeholder="密码">
+								</div>
+							</div>
+							<h6 class="error row" style="display:none;" id="errormsg">错误的用户名或密码</h6>
+							<div class="row">
+								<!--<button type="submit" class="btn login-btn" id="login" name="0MKKey" onClick="cc(0)">登录</button>-->
+								<button type="submit" class="btn login-btn" id="login" name="0MKKey" onClick="et();">登  录</button>
+								
+							</div>
+							<div class="row-nomargin" style="display:block;" id="show_save_me">
+								<input type="checkbox" name="save_me" id="autoLogin" value="1" tabindex="5"><span>保持登录状态</span>
+								<a href="http://v.ruc.edu.cn/forget/Index/index" class="outlink-icon helplink">忘记密码?</a>							
+							</div>
+							</div>
+						</div>
+					<!--</form> -->
+				</div>
+				
+								
+				<form name="f0" method="post" action=""><input type="hidden" name="DDDDD" value="0"><input type="hidden" name="upass" value="0">
+					<input type="hidden" name="R1" value="0"><input type="hidden" name="R2" value="0"><input type="hidden" name="para" value="00">
+					<input type="hidden" name="0MKKey" value="123456">
+				</form>
+				
+			</div>
+			
+			<div class="container desc mobile-hidden">
+				<div class="four columns alpha">
+					<h3>微人大</h3>
+					<p>继承“数字人大”使命的下一代校内综合平台，更加社交化，更加互联网化。</p>
+					<a href="#">关于V-RUC </a>
+					<a href="#">新增功能！</a>
+				</div>
+				<div class="four columns">
+					<div class="lefticon"><span class="icon-idcard"></span></div>
+					<div class="itemdesc">
+						<h5>统一身份，复合帐号</h5>
+						<p>您可以使用学工号、手机号或者Email地址登录，都对应到一个帐号，在跨校访问时，都无需更换。</p>
+					</div>
+				</div>
+				<div class="four columns">
+					<div class="lefticon"><span class="icon-cloud"></span></div>
+					<div class="itemdesc">
+						<h5>丰富应用，跨校资源</h5>
+						<p>整合全部校内应用，选课、查询通知、下载、观看在线视频，一次登录即可获得，更具有丰富的群组及社交功能。</p>
+					</div>
+				</div>
+				<div class="four columns omega">
+					<div class="lefticon"><span class="icon-mobile"></span></div>
+					<div class="itemdesc">
+						<h5>移动终端</h5>
+						<p>在手机或者平板电脑上使用更加方便，随时随地了解校内动态。</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<div class="bottom">
+		<div class="container">
+			<div class="sixteen columns footer">
+				<ul class="footerlist">
+					<li><span class="c2 block">&copy; 2014 TiUP</span></li>
+					<li><a href="#" class="black mobile-hidden">办公</a></li>
+					<li><a href="#" class="black mobile-hidden">教学</a></li>
+					<li><a href="#" class="black mobile-hidden">科研</a></li>
+					<li><a href="#" class="black mobile-hidden">生活</a></li>
+					<li><a href="#" class="black">隐私政策</a></li>
+					<li><a href="#" class="black">使用条款</a></li>
+					<span class="icon-vruc"></span>
+					<div class="mobile-hidden">
+						<select name="language three columns">
+							<option value="chn">中文（简体）</option>
+							<option value="chn_tw">中文（繁体）</option>
+							<option value="eng">English</option> 
+						</select>
+					</div>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+</html>
+<script type="text/JavaScript">
+
+// 设置VLAN页面
+setVLANPage(1);
+// 页面账号密码保存
+var cook = getCookie("md5_login");
+if(cook != null){
+	var arr = cook.split("|");
+	var uname = document.getElementById("username").value = arr[0];
+	var pass = document.getElementById("password").value = arr[1];
+	document.getElementsByName("save_me")[0].checked = true;
+}
+</script>

@@ -49,5 +49,115 @@
       </div>
     </div>
 
+    <h4>从头构建一个基于 vue-webpack 模块的 Vue 项目</h4>
+    <div class="para">
+      <li>Use `vue` command to init a project</li>
+      <pre><code class="shell">
+        # make sure the project name, description, author, vue-router(if need), ESLint(if need), unit tests(if need), e2e test(if need), npm or yarn(if need)
+        vue init webpack project-name
+
+      </code></pre>
+
+      <li>Config JavaScript Version</li>
+      <pre><code class="shell">
+        * `ctrl + shift + s` open the WebStorm setting
+        * choose `Languages and Frameworks`
+        * choose `JavaScript`
+        * choose `JavaScript languages version` to Es6
+      </code></pre>
+
+      <li>Config jade (optional)</li>
+      <pre><code class="javascript">
+        yarn add jade jade-loader --dev
+        // open build/webpack.base.conf.js and add the code above
+        {
+          test: /\.jade$/,
+          loader: 'jade-loader'
+        }
+      </code></pre>
+
+      <li>Config less</li>
+      <pre><code class="shell">
+        yarn add less less-loader --dev
+      </code></pre>
+
+      <li>Config vux (optional)</li>
+      <pre><code class="javascript">
+        yarn add vux vux-loader --dev
+
+        // open build/webpack.base.conf.js
+        const vuxLoader = require('vux-loader')
+        const webpackConfig = originalConfig // 原来的 module.exports 代码赋值给变量 webpackConfig
+
+        module.exports = vuxLoader.merge(webpackConfig, {
+          plugins: ['vux-ui']
+        })
+      </code></pre>
+
+      <li>Rest css(optional)</li>
+      <pre><code class="html">
+        yarn add normalize.css
+        //
+        // open `app.vue` and add code above
+        &lt;style lang="less">
+          @import '~vux/src/styles/reset.less';
+          @import '~normalize.css/normalize.css';
+          @import "./assets/key.less";
+        &lt;/style>
+      </code></pre>
+
+      <li>Config vue-resource</li>
+      <pre><code class="javascript">
+        yarn add vue-resource
+        //
+        // open main.js and add code above
+        import VueResource from 'vue-resource'
+        Vue.use(VueResource)
+      </code></pre>
+
+      <li>Config vuex (optional)</li>
+      <pre><code class="javascript">
+        yarn add vuex
+        //
+        // open main.js and add code above
+        import Vuex from 'vuex'
+        Vue.use(Vuex)
+      </code></pre>
+
+      <h4>下面的配置是针对于 mobile 端的</h4>
+      <li>Add viewport</li>
+      <pre><code class="html">
+        &lt;meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+      </code></pre>
+
+      <li>Using rem</li>
+      <pre><code class="javascript">
+        var t = window.document.documentElement.clientWidth / 3.2;
+        t = 156.25 >= t ? t : 156.25,
+        document.documentElement.style.fontSize = t + "px",
+        window.onresize = function() {
+          var t = window.document.documentElement.clientWidth / 3.2;
+          t = 156.25 >= t ? t : 156.25,
+          document.documentElement.style.fontSize = t + "px"
+        }
+      </code></pre>
+
+      <li>Using less</li>
+      <pre><code class="css">
+        @media screen and (min-width:100px) and (max-width:359px) {
+        .fz12{font-size:12px}.fz14{font-size:14px}
+        }
+        @media screen and (min-width:360px) and (max-width:413px) {
+          .fz12{font-size:12px}.fz14{font-size:14px}
+        }
+        @media screen and (min-width:414px) {
+          .fz12{font-size:14px}.fz14{font-size:16px}
+        }
+        html{font-size:100px}
+        #app{max-width:500px;margin:0 auto}
+      </code></pre>
+
+    </div>
+
   </div>
 </template>

@@ -1,0 +1,313 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <title>Drcom PC登陆成功页</title>
+    <!--Dr.COMWebLoginID_3.htm-->
+
+    <script>document.write('<script language=javascript src="a41.js?version=1.4_' + (new Date()).valueOf() + '"><\/script>');</script>
+
+    <script language="javascript">
+<!--
+Gno=00;UID='12345678901234567890123456';m=0;UL='                                                                                                                                                                                                        ';mcode="FFFF";
+url1='http://1.1.1.1:9002/0'          ;
+cvid=9999,pvid=9999;
+v4serip='192.168.100.093';m46=0;v46ip='123.123.123.123'                        ;
+
+var tmphtml="";
+if((navigator.userAgent.indexOf('iPad') > 0) || (navigator.userAgent.indexOf('Windows NT') > 0))tmphtml=0;
+else if((navigator.userAgent.indexOf('Mobile') > 0) ){tmphtml=1;}
+else tmphtml=0;
+
+if(enPortal==0){
+	//window.open(url1,'','width=280,height=60,left=0,top=0,resizable=1');
+}
+
+if(redirectLink !='') {
+	window.location=redirectLink;
+}
+else if(m!=0  && UL.indexOf("1.1.1.1")<0){
+	window.location=UL;
+}
+else{
+	/*A window.location='UuU'                                                                               ;a*/
+}
+
+function checkphone(){
+    if (tmphtml == 0) {
+        var postForm = document.getElementsByName('PostForm')[0];
+        postForm.UID.value = UID;
+        postForm.v4serip.value = v4serip;
+        postForm.v46ip.value = v46ip;
+        postForm.action = window.location.protocol + "//" + window.location.hostname + "801/eportal/Bootstrap/WebRoot/index.php";
+//        postForm.action = window.location.protocol + "//" + window.location.hostname + ":801/eportal/controller/login.php";
+
+        postForm.submit();
+//        console.log(p=postForm)
+
+//        return;
+    }
+	PostForm.RET.value=33;
+	PostForm.INFO.value="Gno="+Gno+";UID='"+UID+"';m="+m+";UL='"+UL+"';url1='"+url1+"';cvid='"+cvid+"';pvid='"+pvid+"';v4serip='"+v4serip+"';m46='"+m46+"';v46ip='"+v46ip+"';";
+	document.PostForm.submit();
+}
+
+// --></script>
+    <style>
+        body, h1, h2, h3, form, ol, ul, li, dd, dl, dt, p {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            font: 12px/1.5 arial,simsun;
+            color: #333;
+        }
+
+        img {
+            border: 0px;
+            vertical-align: middle;
+        }
+
+        ul, ol, li {
+            list-style: none;
+        }
+
+        input, textarea, select {
+            resize: none;
+            outline: none;
+            vertical-align: middle;
+        }
+
+        em, cite {
+            font-style: normal;
+        }
+
+        .ui_alert, .ui_error, .ui_success, .ui_notice, .ui_confirm, .ui_prompt {
+            border: solid 1px #F5F5F5;
+            border-top: solid 1px #F1F1F1;
+            border-left: solid 1px #F1F1F1;
+            background-color: #F7F7F7;
+            width: 156px;
+            height: 46px;
+            margin: 0px auto;
+            background: -moz-linear-gradient(top,#FAFAFA,#E3E3E3);
+            background: -webkit-gradient(linear,left top,left bottom,from(#FAFAFA),to(#E3E3E3));
+            border-radius: 8px;
+            box-shadow: 3px 3px 4px #AAA;
+        }
+
+            .ui_alert .ui_msg, .ui_error .ui_msg, .ui_success .ui_msg, .ui_notice .ui_msg, .ui_confirm .ui_c1, .ui_prompt .ui_msg, .ui_confirm .ui_msg {
+                background: url(a61.png) no-repeat center left;
+                margin: 0px 15px;
+                padding: 10px 8px 10px 40px;
+                line-height: 25px;
+                color: #8C5507;
+                font-size: 15px;
+                font-weight: bold;
+            }
+
+            .ui_error .ui_msg {
+                background: url(a64.png) no-repeat center left;
+                color: #FF3C1A;
+            }
+
+            .ui_success .ui_msg {
+                background: url(a63.png) no-repeat center left;
+                color: #107A29;
+            }
+
+            .ui_confirm .ui_msg, .ui_confirm .ui_msg {
+                margin: 0px 15px;
+            }
+
+            .ui_confirm .ui_msg {
+                background: url(a62.png) no-repeat center left;
+                color: #00627A;
+                padding-top: 12px;
+                margin: 0px 20px;
+            }
+
+            .ui_confirm .ui_p {
+                margin: 0px;
+                padding-bottom: 15px;
+                text-align: center;
+            }
+
+        .ui_p .ui_button, .ui_p .ui_button:hover {
+            border-radius: 0px;
+            background-color: #99CF4E;
+            height: 27px;
+            width: 62px;
+            border: 0px none;
+            display: inline-block;
+            font-size: 14px;
+            color: #F3FAEB;
+            font-weight: bold;
+            line-height: 27px;
+            cursor: pointer;
+        }
+
+        .ui_button_r {
+            margin-left: 10px;
+        }
+
+        .F_css {
+            border-color: #F00 !important;
+        }
+
+        button::-moz-focus-inner, input[type="reset"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, [type="button"]::-moz-focus-inner {
+            border: none;
+        }
+    </style>
+</head>
+
+<body onselectstart="return false" onload="checkphone()">
+    <style>
+        <!--
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+
+        .font1 {
+            font-family: 微软雅黑;
+            font-size: 14px;
+            line-height: 30px;
+            color: #5F6468;
+        }
+
+        .input-border {
+            font-family: 微软雅黑;
+            border: 1px solid #b8b8b8;
+            width: 288px;
+            height: 34px;
+            line-height: 34px;
+            font-size: 16px;
+        }
+
+        .con {
+            width: 1000px;
+            height: 650px;
+            margin-right: auto;
+            margin-left: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -325px 0 0 -500px;
+        }
+
+        .main {
+            background-image: url('a01.jpg');
+            background-repeat: no-repeat;
+            float: left;
+            width: 1000px;
+            height: 650px;
+        }
+
+            .main .logo {
+                float: left;
+                margin: 50px 80px;
+            }
+
+            .main .bg {
+                background-image: url('a04.jpg');
+                width: 940px;
+                height: 428px;
+                margin: 0px 28px;
+                float: left;
+            }
+
+                .main .bg .welcome {
+                    float: left;
+                    height: 50px;
+                    width: 600px;
+                    margin: 30px 40px;
+                }
+
+                .main .bg .login {
+                    float: left;
+                    height: 210px;
+                    width: 450px;
+                    margin: 10px 40px;
+                    font-family: 微软雅黑;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #5F6468;
+                }
+
+            .main .foot {
+                float: left;
+                height: 25px;
+                width: 1000px;
+                font-family: 微软雅黑;
+                font-size: 12px;
+                line-height: 16px;
+                color: #5F6468;
+                margin: 18px 0px;
+            }
+
+        .btn {
+            BORDER: 1px #EE0000 solid;
+            height: 38px;
+            width: 130px;
+            font-family: "Microsoft YaHei";
+            font-size: 14px;
+            background: #EE0000;
+            color: #fff;
+            cursor: hand;
+        }
+        -->
+    </style>
+    <div class="con">
+        <div class="main">
+
+            <div class="logo">
+                <a target="_blank" href="http://www.doctorcom.com/"><img border="0" src="a02.jpg"></a>
+            </div>
+
+            <div class="bg">
+                <div class="welcome">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
+
+                <div class="login">
+                    <form name="f1" method="post" action="">
+                        <table border="0" width="100%" cellspacing="1" cellpadding="0" class="font1">
+                            <tr>
+                                <td height="150" width="99%" align="center">
+                                    <span id="PageTips">您已经成功登录。<br>You have successfully logged into our system.<br>在完成工作后，请别忘记注销。<br>Please don't forget to log out after you have finished.</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="60" width="99%">
+                                    <p align="center">
+                                        <input id="LogoutButton" type="button" onclick="javascript:wc()" name="logout" value="注 销 (Logout)" class="btn">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="foot">
+                <a target="_blank" href="http://www.doctorcom.com">本宽带计费系统由城市热点提供</a>
+            </div>
+
+        </div>
+    </div>
+    <form name="PostForm" action="/" method=post>
+        <input type="hidden" name="RET" value="">
+        <input type="hidden" name="INFO" value="">
+        <input type="hidden" name="INFO1" value="">
+        <input type="hidden" name="UID" value="">
+        <input type="hidden" name="v4serip" value="">
+        <input type="hidden" name="v46ip" value="">
+    </form>
+</body>
+</html>
